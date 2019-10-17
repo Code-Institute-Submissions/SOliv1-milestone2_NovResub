@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Earth Focus</title>
+
+    <link rel="stylesheet" href="static/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="static/css/dc.min.css" type="text/css" />
+    <link rel="stylesheet" href="static/css/style.css" type="text/css" />
+    <style>
+        div {
+            clear: left;
+        }
+    </style>
+    <script type="text/javascript" src="static/js/d3.v5.min.js"></script>
+    <script type="text/javascript" src="static/js/crossfilter.min.js"></script>
+    <script type="text/javascript" src="static/js/dc.min.js"></script>
+    <script type="text/javascript" src="static/js/queue.min.js"></script>
+</head>
+
+<body>
+    <div>
+        
+        <p>Legend</p>
+        <div id="discipline-selector"></div>
+        <div id="population-balance"></div>
+        <div id="specific-country"></div>
+        <div id="specific-continent"></div>
+        <div id="average-area"></div>
+    </div>
+
+
+    <div>
+        <h3>Total Population per Country</h3>
+        <div id="per-country-chart"></div>
+    </div>
+
+    <div>
+        <h3>Total Population Per Continent</h3>
+        <div id="per-continent-chart"></div>
+    </div>
+    <div>
+        <h3>Total Area Per Continent</h3>
+        <div id="per-area-chart"></div>
+    </div>
+    <script>
+        queue()
+            .defer(d3.json, "data/populationcountry.json")
+            .await(makeGraphs);
+        chart
+            .colorAccessor(function (d) {
+            if (d.value > 12)   {
+                return "Country";
+            }
+             if (d.value > 9)   {
+                return "Continent";
+            }
+             if (d.value > 6)   {
+                return "test3";
+            }
+             if (d.value > 3)   {
+                return "test4";
+            }
+        })
+    function makeGraphs(error, populationcountryData)   {
+            var ndx = crossfilter(populationcountryData);
+            var country_dim = ndx.dimension(dc.pluck('Country'))
+            var total_population_per_country = country_dim.group().reduceSum(dc.pluck('Population'));
+            dc.barChart('#per-country-chart')
+                .width(400)
+                .height(400)
+                .colors(d3.scale.ordinal().domain(["Country", "test2", "test3", "test4"])
+                .range(["red", "orange", "yellow", "green"]))
+                .margins({ top: 10, right: 50, bottom: 200, left: 50 })
+                .dimension(country_dim)
+                .group(total_population_per_country)
+                .transitionDuration(500)
+                .x(d3.scale.ordinal())
+                .xUnits(dc.units.ordinal)
+                .xAxisLabel("Country")
+                .yAxis().ticks(4);
+            var continent_dim = ndx.dimension(dc.pluck('Continent'));
+            var total_population_per_continent = continent_dim.group().reduceSum(dc.pluck('Population'));
+            dc.barChart('#per-continent-chart')
+                .width(400)
+                .height(400)
+                .colors(d3.scale.ordinal().domain(["test1", "Continent", "test3", "test4"])
+                .range(["red", "orange", "yellow", "green"]))
+                .margins({ top: 10, right: 50, bottom: 150, left: 50 })
+                .dimension(continent_dim)
+                .group(total_population_per_continent)
+                .transitionDuration(500)
+                .x(d3.scale.ordinal())
+                .xUnits(dc.units.ordinal)
+                .xAxisLabel("Continent")
+                .yAxis().ticks(4);
+            var continent_dim = ndx.dimension(dc.pluck('Continent'));
+            var total_area_per_continent = continent_dim.group().reduceSum(dc.pluck('Area'));
+            dc.barChart('#per-area-chart')
+                .width(400)
+                .height(400)
+                .colors(d3.scale.ordinal().domain(["test1", "test2", "test3", "test4"])
+                .range(["red", "orange", "yellow", "green"]))
+                .margins({ top: 10, right: 50, bottom: 100, left: 50 })
+                .dimension(continent_dim)
+                .group(total_area_per_continent)
+                .transitionDuration(500)
+                .x(d3.scale.ordinal())
+                .xUnits(dc.units.ordinal)
+                .xAxisLabel("Area")
+                .yAxis().ticks(4);
+            dc.renderAll();
+        }
+    </script>
+</body>
