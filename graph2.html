@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Earth Focus graph2cs</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dc/2.1.8/dc.min.css" type="text/css" />
+    
+    <style>
+        div {
+            clear: left;
+        }
+    </style>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs//js/crossfilter.js/crossfilter.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/dc/js/dc.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/queue-async/1.0.7/queue.min.js"></script>
+</head>
+<body>
+    <div>
+        <h3>Total Population Per Country / Continent</h3>
+        <div id="per-Country-chart"></div>
+    </div>
+    <script>
+        queue()
+            .defer(d3.json, "data/population.json")
+            .await(makeGraphs);
+        
+        function makeGraphs(error, populationData) {
+            var ndx = crossfilter(populationData);
+            var Country_dim = ndx.dimension(dc.pluck('Country'));
+            var total_Population_per_Country = Country_dim.group().reduceSum(dc.pluck('Population'));
+            dc.pieChart('#per-country-chart')
+                .height(330)
+                .radius(90)
+                .transitionDuration(1500)
+                .dimension(Country_dim)
+                .group(total_Population_per_Country);
+            
+            var Continent_dim = ndx.dimension(dc.pluck('Continent'));
+            var total_Population_per_Continent = Continent_dim.group().reduceSum(dc.pluck('Population'));
+            dc.pieChart('#per-Continent-chart')
+                .height(330)
+                .radius(90)
+                .transitionDuration(1500)
+                .dimension(Continent_dim)
+                .group(total_Population_per_Continent);
+            
+            dc.renderAll();
+        }
+    </script>
+</body>
+</html>
