@@ -50,7 +50,10 @@
                         </li>
                     </ul>
         <h3>Total Population Per Country / Continent</h3>
-        <div id="per-Country-chart"></div>
+        <div id="per-Country-chart">
+        </div>
+        <div id ="per Continent-chart">
+        </div>
     </div>
     <script>
         queue()
@@ -61,7 +64,7 @@
             var ndx = crossfilter(populationData);
             var Country_dim = ndx.dimension(dc.pluck('Country'));
             var total_Population_per_Country = Country_dim.group().reduceSum(dc.pluck('Population'));
-            dc.pieChart('#per-country-chart')
+            dc.pieChart('#per-Country-chart')
                 .height(330)
                 .radius(90)
                 .transitionDuration(1500)

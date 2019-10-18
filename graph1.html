@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Earth Focus</title>
-
-    <link rel="stylesheet" href="static/css/bootstrap.min.css" type="text/css" />
-    <link rel="stylesheet" href="static/css/dc.min.css" type="text/css" />
-    <link rel="stylesheet" href="static/css/style.css" type="text/css" />
+    <title>Earth Focus graph2</title>
+    <link href="css/style.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Dosis' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dc/2.1.8/dc.min.css" type="text/css" />
+    
     <style>
         div {
             clear: left;
@@ -22,32 +23,30 @@
 
 <body>
     <div>
-        
         <p>Legend</p>
-        <div id="discipline-selector"></div>
-        <div id="population-balance"></div>
-        <div id="specific-country"></div>
-        <div id="specific-continent"></div>
-        <div id="average-area"></div>
+        <div id=""></div>
+        <div id="per-Country-chart">Country</div>
+        <div id="per-Continent-chart">Continent</div>
+        <div id="per-Area-chart">Area</div>
     </div>
 
 
     <div>
         <h3>Total Population per Country</h3>
-        <div id="per-country-chart"></div>
+        <div id="per-Country-chart"></div>
     </div>
 
     <div>
         <h3>Total Population Per Continent</h3>
-        <div id="per-continent-chart"></div>
+        <div id="per-Continent-chart"></div>
     </div>
     <div>
         <h3>Total Area Per Continent</h3>
-        <div id="per-area-chart"></div>
+        <div id="per-Area-chart"></div>
     </div>
     <script>
         queue()
-            .defer(d3.json, "data/populationcountry.json")
+            .defer(d3.json, "data/populationCountry.json")
             .await(makeGraphs);
         chart
             .colorAccessor(function (d) {
@@ -65,47 +64,37 @@
             }
         })
     function makeGraphs(error, populationcountryData)   {
-            var ndx = crossfilter(populationcountryData);
-            var country_dim = ndx.dimension(dc.pluck('Country'))
-            var total_population_per_country = country_dim.group().reduceSum(dc.pluck('Population'));
-            dc.barChart('#per-country-chart')
+            var ndx = crossfilter(populationCountryData);
+            
+            var Country_dim = ndx.dimension(dc.pluck("Country"))
+            var Population = Country_dim.group().reduceSum(dc.pluck('Population'));
+            dc.selectMenu("#container_id")
                 .width(400)
                 .height(400)
                 .colors(d3.scale.ordinal().domain(["Country", "test2", "test3", "test4"])
                 .range(["red", "orange", "yellow", "green"]))
                 .margins({ top: 10, right: 50, bottom: 200, left: 50 })
-                .dimension(country_dim)
-                .group(total_population_per_country)
+                .dimension(Country_dim)
+                .group(total_Population_per_Country)
                 .transitionDuration(500)
                 .x(d3.scale.ordinal())
                 .xUnits(dc.units.ordinal)
                 .xAxisLabel("Country")
                 .yAxis().ticks(4);
-            var continent_dim = ndx.dimension(dc.pluck('Continent'));
-            var total_population_per_continent = continent_dim.group().reduceSum(dc.pluck('Population'));
-            dc.barChart('#per-continent-chart')
-                .width(400)
-                .height(400)
-                .colors(d3.scale.ordinal().domain(["test1", "Continent", "test3", "test4"])
-                .range(["red", "orange", "yellow", "green"]))
-                .margins({ top: 10, right: 50, bottom: 150, left: 50 })
-                .dimension(continent_dim)
-                .group(total_population_per_continent)
-                .transitionDuration(500)
-                .x(d3.scale.ordinal())
-                .xUnits(dc.units.ordinal)
-                .xAxisLabel("Continent")
-                .yAxis().ticks(4);
-            var continent_dim = ndx.dimension(dc.pluck('Continent'));
-            var total_area_per_continent = continent_dim.group().reduceSum(dc.pluck('Area'));
-            dc.barChart('#per-area-chart')
+                
+                
+    
+                
+            var Continent_dim = ndx.dimension(dc.pluck('Continent'));
+            var total_Area_per_Continent = Continent_dim.group().reduceSum(dc.pluck('Area'));
+            dc.selectMenu("#container_id")
                 .width(400)
                 .height(400)
                 .colors(d3.scale.ordinal().domain(["test1", "test2", "test3", "test4"])
                 .range(["red", "orange", "yellow", "green"]))
                 .margins({ top: 10, right: 50, bottom: 100, left: 50 })
-                .dimension(continent_dim)
-                .group(total_area_per_continent)
+                .dimension(Continent_dim)
+                .group(total_Area_per_Continent)
                 .transitionDuration(500)
                 .x(d3.scale.ordinal())
                 .xUnits(dc.units.ordinal)
