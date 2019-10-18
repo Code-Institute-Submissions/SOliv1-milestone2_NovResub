@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Earth Focus graph2cs</title>
-
+    <link href="css/style.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Dosis' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dc/2.1.8/dc.min.css" type="text/css" />
     
     <style>
@@ -22,6 +24,31 @@
 </head>
 <body>
     <div>
+        <div class="container-fluid navalert-container">
+            <nav class="navbar navbar-dark navbar-expand-sm">
+                <div class="navbar-logo">Earth Focus
+                </div>
+                <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- Nav-bar-collapse -->
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="active nav-item mr-1"><a class="nav-link" href="index.html">Home</a></li>
+                            <a class="nav-link dropdown-toggle" href="#index.html" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="#navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="index.html">Home</a>
+                                <a class="dropdown-item" href="graph1.html">Graph1</a>
+                                <a class="dropdown-item" href="graph2.html">Graph2</a>S
+                            </div>
+                            <div class="dropdown-menu" aria-labelledby="#navbarDropdownMenuLink">
+                                <div class="dropdown-divider">
+                                    <a class="dropdown-item" href="#index.html">Dropdown</a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
         <h3>Total Population Per Country / Continent</h3>
         <div id="per-Country-chart"></div>
     </div>
