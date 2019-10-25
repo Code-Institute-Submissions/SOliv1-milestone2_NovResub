@@ -7,7 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Earth Focus PieChart</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dc/2.1.8/dc.min.css" type="text/css" />
-   <link rel="stylesheet" href="css/style1.css" type="text/css"/>
+    <link rel="stylesheet" href="milestone2/css/style.css" type="text/css"/>
+    <link rel="stylesheet" href="milestone2/css/style1.css" type="text/css"/>
     <style>
         div {
             clear: left;
@@ -19,6 +20,35 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/queue-async/1.0.7/queue.min.js"></script>
 </head>
 <body>
+    <div class="container-fluid navalert-container">
+        <nav class="navbar navbar-dark navbar-expand-sm">
+            <div class="navbar-logo">Earth Focus
+            </div>
+            <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+                <!-- Nav-bar-collapse -->
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav mr-auto">
+                    <li class="active nav-item mr-1"><a class="nav-link" href="index.html">Home</a></li>
+                        <a class="nav-link dropdown-toggle" href="#index.html" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="#navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="#index.html">Home</a>
+                            <a class="dropdown-item" href="#index1.html">Graph1</a>
+                            <a class="dropdown-item" href="#index2.html">Graph2</a>
+                            <a class="dropdown-item" href="#index3.html">Graph3</a>
+                            <a class="dropdown-item" href="#index4.html">Graph4</a>
+                        </div>
+                        <div class="dropdown-menu" aria-labelledby="#navbarDropdownMenuLink">
+                            <div class="dropdown-divider">
+                                <a class="dropdown-item" href="#index.html">Dropdown</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
     <div>
         <h3>Total Population Per Country</h3>
         <div id="per-Country-chart"></div>
@@ -35,7 +65,7 @@
         queue()
             .defer(d3.json, "data/populationCountry.json")
             .await(makeGraphs);
-            
+
         function makeGraphs(error, populationCountryData) {
             var ndx = crossfilter(populationCountryData);
 
@@ -61,10 +91,10 @@
                 .dimension(Continent_dim)
                 .group(total_Population_per_Continent);
 
-            
+
             var Area_dim = ndx.dimension(dc.pluck('Area'));
             var total_Area_per_Continent = Continent_dim.group().reduceSum(dc.pluck('Area'));
-            
+
             dc.pieChart('#per-Area-chart')
                 .height(330)
                 .radius(90)

@@ -10,7 +10,7 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Dosis' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dc/2.1.8/dc.min.css" type="text/css" />
-    
+
     <style>
         div {
             clear: left;
@@ -38,9 +38,11 @@
                             <a class="nav-link dropdown-toggle" href="#index.html" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             </a>
                             <div class="dropdown-menu" aria-labelledby="#navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="index.html">Home</a>
-                                <a class="dropdown-item" href="graph1.html">Graph1</a>
-                                <a class="dropdown-item" href="graph2.html">Graph2</a>S
+                            <a class="dropdown-item" href="#index.html">Home</a>
+                            <a class="dropdown-item" href="#index1.html">Graph1</a>
+                            <a class="dropdown-item" href="#index2.html">Graph2</a>
+                            <a class="dropdown-item" href="#index3.html">Graph3</a>
+                            <a class="dropdown-item" href="#index4.html">Graph4</a>
                             </div>
                             <div class="dropdown-menu" aria-labelledby="#navbarDropdownMenuLink">
                                 <div class="dropdown-divider">
@@ -49,6 +51,9 @@
                             </div>
                         </li>
                     </ul>
+                </div>
+            </nav>
+        </div>
         <h3>Total Population Per Country / Continent</h3>
         <div id="per-Country-chart">
         </div>
@@ -59,7 +64,7 @@
         queue()
             .defer(d3.json, "data/population.json")
             .await(makeGraphs);
-        
+
         function makeGraphs(error, populationData) {
             var ndx = crossfilter(populationData);
             var Country_dim = ndx.dimension(dc.pluck('Country'));
@@ -70,7 +75,7 @@
                 .transitionDuration(1500)
                 .dimension(Country_dim)
                 .group(total_Population_per_Country);
-            
+
             var Continent_dim = ndx.dimension(dc.pluck('Continent'));
             var total_Population_per_Continent = Continent_dim.group().reduceSum(dc.pluck('Population'));
             dc.pieChart('#per-Continent-chart')
@@ -79,7 +84,7 @@
                 .transitionDuration(1500)
                 .dimension(Continent_dim)
                 .group(total_Population_per_Continent);
-            
+
             dc.renderAll();
         }
     </script>
