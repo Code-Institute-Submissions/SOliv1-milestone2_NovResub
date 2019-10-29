@@ -54,8 +54,9 @@ My Mentor Brian Mancheria for helping me to try to understand the logistics of J
 The tutor support
 The Slack Community
 Thw World Data Bank for data on Population and Environement issues
+DC.JS GETTING STARTED AND HOW-TO GUIDE
 © 2019 GitHub, Inc.
 
 ## Bugs
-I have had serious problems with this project and my understanding of java script and how it works.
+I have had considerable problems with this project and my understanding of java script and how it works.
 I really hope to be able to iron these out in time hence the project being unpfrofessional 
