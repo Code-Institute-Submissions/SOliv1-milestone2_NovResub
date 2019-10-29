@@ -6,61 +6,36 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Earth Focus</title>
 
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
-    <link rel="stylesheet" href="css/dc.min.css" type="text/css"/>
-    <link rel="stylesheet" href="css/style1.css" type="text/css"/>
+    <link rel="stylesheet" href="graphs1/static/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="graphs1/static/css/dc.min.css" type="text/css" />
+    <link rel="stylesheet" href="graphs1/static/css/style.css" type="text/css" />
     <style>
         div {
             clear: left;
         }
     </style>
-    <script type="text/javascript" src="js/d3.min.js"></script>
-    <script type="text/javascript" src="js/crossfilter.min.js"></script>
-    <script type="text/javascript" src="js/dc.js"></script>
-    <script type="text/javascript" src="js/queue.min.js"></script>
+    <script type="text/javascript" src="graphs1/static/js/d3.min.js"></script>
+    <script type="text/javascript" src="graphs1/static/js/crossfilter.min.js"></script>
+    <script type="text/javascript" src="graphs1/static/js/dc.min.js"></script>
+    <script type="text/javascript" src="graphs1/static/js/queue.min.js"></script>
 </head>
 
 <body>
-    <div class="container-fluid navalert-container">
-        <nav class="navbar navbar-dark navbar-expand-sm">
-            <div class="navbar-logo">Earth Focus
-            </div>
-            <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-                <!-- Nav-bar-collapse -->
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav mr-auto">
-                    <li class="active nav-item mr-1"><a class="nav-link" href="index.html">Home</a></li>
-                        <a class="nav-link dropdown-toggle" href="#index.html" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="#navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="#index.html">Home</a>
-                            <a class="dropdown-item" href="#index1.html">Graph1</a>
-                            <a class="dropdown-item" href="#index2.html">Graph2</a>
-                            <a class="dropdown-item" href="#index3.html">Graph3</a>
-                            <a class="dropdown-item" href="#index4.html">Graph4</a>
-                        </div>
-                        <div class="dropdown-menu" aria-labelledby="#navbarDropdownMenuLink">
-                            <div class="dropdown-divider">
-                                <a class="dropdown-item" href="#index.html">Dropdown</a>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </div>
     <div>
-        <div id='chart'>
-        <a class='reset'
-          href='javascript:myChart.filterAll();dc.redrawAll();'
-          style='visibility: hidden;'>reset</a>
+        <p>Legend</p>
+        <div id="discipline-selector"></div>
+        <div id="population-balance"></div>
+        <div id="specific-country"></div>
+        <div id="specific-continent"></div>
+        <div id="average-area"></div>
     </div>
-        <div>
+
+
+    <div>
         <h3>Total Population per Country</h3>
         <div id="per-country-chart"></div>
     </div>
+
     <div>
         <h3>Total Population Per Continent</h3>
         <div id="per-continent-chart"></div>
@@ -71,29 +46,23 @@
     </div>
     <script>
         queue()
-            .defer(d3.json, "data/populationcountry.json")
+            .defer(d3.json, "data/graphs1/populationcountry.json")
             .await(makeGraphs);
+
         chart
             .colorAccessor(function (d) {
             if (d.value > 12)   {
                 return "Country";
             }
-
              if (d.value > 9)   {
-
                 return "Continent";
             }
-
              if (d.value > 6)   {
-
                 return "test3";
             }
-            if (d.value > 3)   {
-
+             if (d.value > 3)   {
                 return "test4";
-
             }
-
         })
 
     function makeGraphs(error, populationcountryData)   {
@@ -114,9 +83,10 @@
                 .xUnits(dc.units.ordinal)
                 .xAxisLabel("Country")
                 .yAxis().ticks(4);
-            var continent_dim = ndx.dimension(dc.pluck('Continent'));
 
+            var continent_dim = ndx.dimension(dc.pluck('Continent'));
             var total_population_per_continent = continent_dim.group().reduceSum(dc.pluck('Population'));
+
 
             dc.barChart('#per-continent-chart')
                 .width(400)
@@ -134,6 +104,8 @@
 
             var continent_dim = ndx.dimension(dc.pluck('Continent'));
             var total_area_per_continent = continent_dim.group().reduceSum(dc.pluck('Area'));
+
+
             dc.barChart('#per-area-chart')
                 .width(400)
                 .height(400)
@@ -152,5 +124,5 @@
         }
     </script>
 </body>
-</html>
 
+</html>
