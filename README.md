@@ -1,5 +1,7 @@
 # milestone2
 ## milestone Project 
+
+
 ### UX Experience
 ### This project will be called "Earth's Future"  
 #### Our World's Future - Lets maintain our beautiful World 
@@ -7,7 +9,18 @@ Statistics and wildlife anyalictics as a guide to how we can readdress the balan
 resources and links to data and other websites.  
 Readdress the balance of population and  Country / Continent and Habitat and Species and how they correlate with each other.
 Reverse Climate Change in theory via data correlation and achieving a balanced perspective to try to understand the real world and what can be done to achieve this in practice.
-
+#### The Cards
+create a climate change dataset.
+Add data and graphs explaining the data
+focus on wildlife and world population and how it is affecting the planet. How we can analyse and understand the data to make positive decisions going forward.
+Sustainable cities
+Population Control
+Saving wildlife from extinction 
+by providing and reversing  their dwindling habitats
+Respect for wildlife and food sources
+Finding solutions 
+What are the solutions
+Implementing the solutions for planet health
 
 ### Earth focus-2 scatter plot
 Continent A string like 'Europe' and the Continent is the same as Country. "In the lessons when we parse the results it is either because the data has a string and we want a number or when the data is one timestamp and we want another. A scatterplot is a chart best suited to plotting two numbers against each other so try Area versus Population". As quoted by a tutor on my course. So I am demonstrating a correlation with population verses area, using a scatterplot.
@@ -23,6 +36,7 @@ I am using a combination of my tutorials and libraries to create my graphs. I ha
 ## Technologies Used
 Jquery to demonstrate DOM manipulation
 Bootstrap Cosmos to help with styling 
+D3 helps you bring data to life using HTML, SVG, and CSS    Allows User to create anything from an HTML table to a Pie chart, from graphs and bar charts to geospatial maps 
 Make graph technologies; Crossfilter / DC / JSon
 
 
