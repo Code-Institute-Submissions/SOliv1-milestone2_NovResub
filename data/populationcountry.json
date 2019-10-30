@@ -1,5 +1,4 @@
-
-    [
+ [
         {"Country": "Russia","Continent": "Europe", "Area": 17098246,"Population": 144},
         {"Country": "China", "Continent": "Asia",  "Area": 9572900,"Population": 1400},
         {"Country": "Canada", "Continent": "North America", "Area": 9984670,"Population": 36.6},
@@ -13,5 +12,3 @@
         {"Country": "Democratic Republic of the Congo","Continent": "Africa", "Area": 2345410,"Population": 81.3},
         {"Country": "Kingdom of Denmark","Continent": "Europe","Area": 2210583,"Population": 5.73}
     ]
-
-
