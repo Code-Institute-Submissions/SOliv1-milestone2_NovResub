@@ -7,7 +7,6 @@
     <title>Earth Focus</title>
 
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
-    <link rel="stylesheet" href="css/dc.css" type="text/css" />
     <link rel="stylesheet" href="css/dc.min.css" type="text/css" />
     <link rel="stylesheet" href="css/style.css" type="text/css" />
     <link rel="stylesheet" href="css/style1.css" type="text/css" />
@@ -20,27 +19,16 @@
     <script type="text/javascript" src="js/crossfilter.min.js"></script>
     <script type="text/javascript" src="js/dc.min.js"></script>
     <script type="text/javascript" src="js/queue.min.js"></script>
-    <script type="text/javascript" src="js/script.js"></script>
 </head>
 
 <body>
- <div id="container">
-        <nav>
-            <ul>
-                <li id="logoNav">Earth Focus</li>
-                <li><a href="index.html#part1graphs_btn">Graph1</a></li>
-                <li><a href="barchart.html">BarChart</a></li>
-                <li><a href="piechart.html">PicChart</a></li>
-                <li><a href="scatterplot.html">ScatterPlot</a></li>
-            </ul>
-        </nav>
     <div>
-        <p>Legend</p>
-        <div id="discipline-selector"></div>
-        <div id="population-balance"></div>
-        <div id="specific-country"></div>
-        <div id="specific-continent"></div>
-        <div id="average-area"></div>
+        <p>Menu</p>
+        <div id=""></div>
+        <div id=""></div>
+        <div id=""></div>
+        <div id=""></div>
+        <div id=""></div>
     </div>
 
 
@@ -59,10 +47,9 @@
     </div>
     <script>
         queue()
-            .defer(d3.json, "data/graphs1/populationcountry.json")
+            .defer(d3.json, "data/populationcountry.json")
             .await(makeGraphs);
-
-        chart
+        dc.barChart
             .colorAccessor(function (d) {
             if (d.value > 12)   {
                 return "Country";
@@ -77,12 +64,10 @@
                 return "test4";
             }
         })
-
-    function makeGraphs(error, populationcountryData)   {
+            function makeGraphs(error, populationcountryData)   {
             var ndx = crossfilter(populationcountryData);
             var country_dim = ndx.dimension(dc.pluck('Country'))
             var total_population_per_country = country_dim.group().reduceSum(dc.pluck('Population'));
-
             dc.barChart('#per-country-chart')
                 .width(400)
                 .height(400)
@@ -96,11 +81,8 @@
                 .xUnits(dc.units.ordinal)
                 .xAxisLabel("Country")
                 .yAxis().ticks(4);
-
             var continent_dim = ndx.dimension(dc.pluck('Continent'));
             var total_population_per_continent = continent_dim.group().reduceSum(dc.pluck('Population'));
-
-
             dc.barChart('#per-continent-chart')
                 .width(400)
                 .height(400)
@@ -114,11 +96,8 @@
                 .xUnits(dc.units.ordinal)
                 .xAxisLabel("Continent")
                 .yAxis().ticks(4);
-
             var continent_dim = ndx.dimension(dc.pluck('Continent'));
             var total_area_per_continent = continent_dim.group().reduceSum(dc.pluck('Area'));
-
-
             dc.barChart('#per-area-chart')
                 .width(400)
                 .height(400)
@@ -132,10 +111,8 @@
                 .xUnits(dc.units.ordinal)
                 .xAxisLabel("Area")
                 .yAxis().ticks(4);
-
             dc.renderAll();
         }
     </script>
 </body>
-
 </html>
