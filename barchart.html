@@ -34,20 +34,34 @@
     </div>
 
     <div>
+    <div id="container">
+        <nav>
+            <ul>
+                <li id="logoNav">Earth Focus</li>
+                <li><a href="index.html#part1graphs_btn">Scroll Down</a></li>
+                <li><a href="barchart.html">BarChart</a></li>
+                <li><a href="piechart.html">PicChart</a></li>
+                <li><a href="scatterplot.html">ScatterPlot</a></li>
+            </ul>
+        </nav>
+        <div class="card graph1" >
         <h3>Total Population per Country</h3>
         <div id="per-country-chart"></div>
-    </div>
+        </div>
 
-    <div>
+        <div>
+        <div class="card graph2" >
         <h3>Total Population Per Continent</h3>
         <div id="per-continent-chart"></div>
-    </div>
-    <div>
+        </div>
+        <div>
+        <div class="card graph3" >
         <h3>Total Area Per Continent</h3>
-        <div id="per-area-chart"></div>
+        <div id="per-area-chart">
+        </div>
     </div>
     <script>
-        queue()
+            queue()
             .defer(d3.json, "data/populationcountry.json")
             .await(makeGraphs);
         dc.barChart
