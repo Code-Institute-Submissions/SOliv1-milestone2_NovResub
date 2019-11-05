@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Earth Focus</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/dc.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+    <link rel="stylesheet" href="css/style1.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+
+   <script type="text/javascript" src="js/d3.min.js"></script>
+    <script type="text/javascript" src="js/crossfilter.min.js"></script>
+    <script type="text/javascript" src="js/dc.min.js"></script>
+    <script type="text/javascript" src="js/graph.js"></script>
+    <script type="text/javascript" src="js/queue.min.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    <script src="https://kit.fontawesome.com/1e03de6694.js" crossorigin="anonymous"></script>
+
+</head>
+
+
+<body>
+<body>
+    <div>
+        <div class="menu" style="width:200px;">
+        <select class="dc-select-menu">
+            <option value="">Select all</option>
+            <option class="dc-select-option" value="Country">Country</option>
+            <option class="dc-select-option" value="Population">Population</option>
+            <option class="dc-select-option" value="Population">Continent</option>
+            <option class="dc-select-option" value="Area">Area</option>
+        </select>
+    </div>
+
+    <div>
+      <div id="container">
+            <nav>
+                <ul>
+                    <li id="logoNav">Earth Focus</li>
+                    <li><a href="index.html#part1graphs_btn">Scroll Down</a></li>
+                    <li><a href="barchart.html">BarChart</a></li>
+                    <li><a href="barchart2.html">BarCharts2</a></li>
+                    <li><a href="piechart.html">PicChart</a></li>
+                    <li><a href="scatterplot.html">ScatterPlot</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <main>
+      <section class="section">
+        <div class="container">
+            <div class="row">
+                <div>
+                    <div class="col-xs-12 col-sm-12">
+                    <h1 class="section-heading">Earth Focus</h1>
+                    <div id="discipline-selector">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-12">
+                <p class="section-paragraph">Population verses the size of an area:</p>
+                </div>
+
+            <div class="col-xs-12 col-sm-6 col-lg-6">
+                <i class="fas fa-chart-bar"  aria-hidden="true"></i><span class="number-box" id="percent-of-Population"></span>
+                <i class="fas fa-chart-area" aria-hidden="true"></i> <span class="number-box" id="percent-of-Area"></span>
+            </div>
+          </div>
+        </div>
+    </section>
+
+
+    <section class="section">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12 col-sm-4 text-center">
+                <p class="section-paragraph">Population and area size.</p>
+            </div>
+            <div class="col-xs-12 col-sm-4 text-center">
+                <p class="section-paragraph"> Average area.</p>
+            </div>
+            <div class="col-xs-12 col-sm-4 text-center">
+                <p class="section-paragraph">Distribution of population across an area.</p>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 col-sm-4 text-center" id="Population-balance" class="custom-chart"></div>
+              <div class="col-xs-12 col-sm-4 text-center" id="average-Area" class="custom-chart"></div>
+              <div class="col-xs-12 col-sm-4 text-center" id="rank-distribution" class="custom-chart"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="container">
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 text-center">
+                <p class="section-paragraph">There appears to be little or no correlation between population and size of an area.</p>
+                </div>
+            <div class="col-xs-12 col-sm-12 text-center" id="population-Area">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 text-center">
+                <p class="section-paragraph">There is a very loose correlation between population and area.</p>
+                </div>
+            <div class="col-xs-12 col-sm-12 text-center" id="Area-Population"></div>
+            </div>
+        </div>
+      </section>
+    </main>
+</body>
+</html>
