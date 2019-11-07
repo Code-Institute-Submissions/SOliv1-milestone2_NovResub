@@ -49,7 +49,8 @@ Make graph technologies; Crossfilter / DC / JSon
 
 
 ## Credits
-Cover page inspired by my course work in Code Institute.
+Cover page inspired by my course work in Code Institute
+background image is a preview page from Adobe stock images (from which I have and account)
 My Mentor Brian Mancheria for helping me to try to understand the logistics of Java script and providing me with info to outline a project for myself
 The tutor support
 The Slack Community
@@ -59,4 +60,8 @@ DC.JS GETTING STARTED AND HOW-TO GUIDE
 
 ## Bugs
 I have had considerable problems with this project and my understanding of java script and how it works.
-I really hope to be able to iron these out in time hence the project being unpfrofessional 
+I really hope to be able to iron these out in time hence the project being unfinished.
+I appear to have a lack of understanding on how to manipulate information in the making of the graphs and the calculations involved.
+Although, I did manage to go through the modules ok.
+Since I am not able to master the making of my graphs - I have decided that I shall be submitting this project minus at least two of them.  I hope that I shall be able to master these issues as I move on in the course.  
+
