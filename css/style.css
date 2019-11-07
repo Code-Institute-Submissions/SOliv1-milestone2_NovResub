@@ -1,13 +1,12 @@
 /*home-page*/
-body {
+
+ body {
 	background-image: url(../img/earth-adobestock.png);
 	background-size: cover;
-	color: #ffffff;*/
+	color: #ffffff;
 	background-color: #eee;
 
-}
-
-}
+ }
 
 
 h1{
@@ -36,7 +35,6 @@ div {
 }
 
 .bottom_button {
-	display: flex;
 	box-sizing:border-box;
 	border-radius: 4px;
 	display: block;
@@ -76,6 +74,7 @@ div {
 #logo {
 	width: 800px;
 	margin: auto;
+    color: #000;
 }
 
 .card {
@@ -122,15 +121,8 @@ nav {
 ul {
 
 	display: flex;
-
 	justify-content:space-between;
-
 	flex-flow: row;
-
-	/*flex-flow: row-reverse;*/
-	/*justify-content:flex-end;*/
-	/*justify-content:space-around;*/
-	/*align-items:flex-start;*/
 	align-items:baseline;
 	border-radius: 10px;
 	list-style-type: none; /*Remove Bullets*/
@@ -169,7 +161,7 @@ li {
 
 }
 
-@media screen and (max-width: 700px) {
+ @media screen and (max-width: 700px) {
 	ul {
 		flex-flow: column;
 		align-items:center;
