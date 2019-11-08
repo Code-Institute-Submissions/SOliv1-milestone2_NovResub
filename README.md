@@ -1,12 +1,12 @@
 # milestone2
 ## milestone Project 
 
-
 ### UX Experience
 The aim in this project is to take raw data, presumably formatted as JSON, and:
 present it in a format thatʼs user-friendly (charts, tables, etc.), allow the user to interact with it (e.g. sort a table, narrow down to a subset of the data, etc.), and potentially derive some insight from the data.
 
-### This project will be called "Earth's Future"  
+### This project will be called "Earth's Future"
+
 #### Our World's Future - Lets maintain our beautiful World 
 Statistics and wildlife anyalictics as a guide to how we can readdress the balance and reverse climate change  
 resources and links to data and other websites.  
@@ -44,22 +44,23 @@ Population Levels and comparisons between countries and Continents. I want the e
 I am using a combination of my tutorials and libraries to create my graphs. I had selected code from #Stack Overflow to assist with colouring my barcharts.
 
 ## Technologies Used
-Jquery to demonstrate DOM manipulation
-Bootstrap Cosmos to help with styling 
-D3 helps you bring data to life using HTML, SVG, and CSS    Allows User to create anything from an HTML table to a Pie chart, from graphs and bar charts to geospatial maps 
-Make graph technologies; Crossfilter / DC / JSon
+-Jquery to demonstrate DOM manipulation
+-Bootstrap Cosmos to help with styling 
+-D3 helps you bring data to life using HTML, SVG, and CSS    Allows User to create anything from an HTML table to a Pie chart, from -graphs and bar charts to geospatial maps 
+-Make graph technologies; Crossfilter / DC / JSon
+
 ### Types of Fields
 #### Differences Measurements and Dimensions
 There are two types of fields, dimensions and measures, based on the role they play in the data: 
 #### Measures are quantitative fields,  meaning theyʼll always be of type number. 
-#### Dimensions are fields that act as labels/names/buckets/categories. They could be of any type, including number.   The following heuristics can be used to tell whether a field is a measure or a dimension before becaming second nature: 
+#### Dimensions are fields that act as labels/names/buckets/categories. They could be of any type, including number.   The following  can be used to tell whether a field is a measure or a dimension before becaming second nature: 
 i) Is it a number? If not itʼs definitely a dimension. 
 ii) If it is: Does it represent a quantity/ can you perform some mathematical operation on it? 
 iii) If so, itʼs a measure, if not, itʼs a dimension. For instance, a phone number contains numbers, but isnʼt really a quantity (adding/multiplying/dividing, etc. two phone numbers does not make mathematical sense).
+
 ### Presenting the Data
 D3 provides tools to generate charts out of JSON data. These charts could be tied to each other i.e. filtering on one chart affects the other charts at once (Iʼm sure youʼve seen this in the examples). The most common charts are:
 Tables - Self-explanatory, you can have as many measures and dimensions as you want in these. Simple bar/column charts - one dimension, one measure. Each bar/column represents an instance of the dimension field (e.g. a specific country), and its height/length is the magnitude of the measure (the countryʼs area). Scatter plots - one dimension, two measures. Each dot is an instance of the dimension field (e.g. specific country) and its horizontal and vertical position on the chart represent the magnitude of the first and second measure respectively. Donut/Pie chart - one dimension, one measure.  Line graph - two measures (self-explanatory), or one dimension and one measure, where the dimension is represents values that are continuous in nature, for example time.
-
 
 ## Credits
 Cover page inspired by my course work in Code Institute
@@ -96,5 +97,5 @@ Since I am currently  unable to master the making of my graphs and have run out 
         })
 #### scatterplot
 Could not make the graph appear with the data for measurements of area and population and dimension - country.  I tried different information from different datasets (see docs folder for ideas and wireframes and datasets), but only got into strife so went back to a basic dataset example.
-### barcharts2 and dashboard 
+#### barcharts2 and dashboard 
 Ditto as above with scatterplot.  I need to build a better understanding of the process of creating interactive dashboards as I like them and am determined to master this situation at some point.  I feel that I am close but I am just not quite grasping it and am waiting for the "lightswitch to come on" so I finally figure them out.
