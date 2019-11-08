@@ -61,7 +61,6 @@ D3 provides tools to generate charts out of JSON data. These charts could be tie
 Tables - Self-explanatory, you can have as many measures and dimensions as you want in these. Simple bar/column charts - one dimension, one measure. Each bar/column represents an instance of the dimension field (e.g. a specific country), and its height/length is the magnitude of the measure (the countryʼs area). Scatter plots - one dimension, two measures. Each dot is an instance of the dimension field (e.g. specific country) and its horizontal and vertical position on the chart represent the magnitude of the first and second measure respectively. Donut/Pie chart - one dimension, one measure.  Line graph - two measures (self-explanatory), or one dimension and one measure, where the dimension is represents values that are continuous in nature, for example time.
 
 
-
 ## Credits
 Cover page inspired by my course work in Code Institute
 Bckground image is a preview page from Adobe stock images (from which I have and account)
@@ -78,5 +77,24 @@ I have had considerable problems with this project and my understanding of java 
 I really hope to be able to iron these out in time hence the project being unfinished.
 I appear to have a lack of understanding on how to manipulate information in the making of the graphs and the calculations involved. Hence I having trouble making my graphs appear and despite the console addressing issues - I was unable to resolve them.
 (Although, I did manage to go through the course modules ok).
-Since I am currently  unable to master the making of my graphs and have run out of time - I have decided that I shall be submitting this project minus at least two of them.  I hope that I shall be able to resolve these issues in future, as I move on in the course.  
+Since I am currently  unable to master the making of my graphs and have run out of time - I have decided that I shall be submitting this project minus at least two of them.  I hope that I shall be able to resolve these issues in future, as I move on in the course.
 
+#### Could not make the colours appear in barchart 
+.colorAccessor(function (d) {
+            if (d.value > 12)   {
+                return "Country";
+            }
+             if (d.value > 9)   {
+                return "Continent";
+            }
+             if (d.value > 6)   {
+                return "test3";
+            }
+             if (d.value > 3)   {
+                return "test4";
+            }
+        })
+#### scatterplot
+Could not make the graph appear with the data for measurements of area and population and dimension - country.  I tried different information from different datasets (see docs folder for ideas and wireframes and datasets), but only got into strife so went back to a basic dataset example.
+### barcharts2 and dashboard 
+Ditto as above with scatterplot.  I need to build a better understanding of the process of creating interactive dashboards as I like them and am determined to master this situation at some point.  I feel that I am close but I am just not quite grasping it and am waiting for the "lightswitch to come on" so I finally figure them out.
