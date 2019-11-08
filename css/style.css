@@ -3,6 +3,8 @@
  body {
 	background-image: url(../img/earth-adobestock.png);
 	background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
 	color: #ffffff;
 	background-color: #eee;
 
@@ -133,12 +135,11 @@ ul {
 li {
 	flex:1;
 	height: 30px;
-	/*width:10%;*/
-	/*border:2px solid #000;*/
-	/*background-color: #81BBC9;*/
-	/*border-radius: 10px;*/
+	width:10%;
+    text-decoration: none;
+	border-radius: 10px;
 	font-family: Dosis;
-	padding:20px 20px 20px 20px;
+	padding:   20px 20px 20px 20px;
 	text-align: center;
 	font-size: 1.3em;
 }
@@ -148,10 +149,11 @@ li {
 	text-align: left;
 	font-size: 2em;
 	font-weight: bold;
+    color:black;
 }
 
 .underline {
-    text-decoration:underline;
+    text-decoration:none;
 
 }
 

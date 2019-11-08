@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    -$("#stream1_btn").on("click", function() {
+    -$("#barchart_html").on("click", function() {
         $(".graph1").show();
         $(".graph1").show(1000);
         $("#button_effects1").click(function(){
@@ -7,14 +7,14 @@ $(document).ready(function() {
     });
  });
  
-   $("#stream2_btn").on("click", function() {
+   $("#barchart2_html").on("click", function() {
         $(".graph1").removeClass('highlight_graph');
         $(".graph2").removeClass('highlight_graph');
         $(".graph3").removeClass('highlight_graph');
         $(".graph2").addClass('highlight_graph');
    });
 
-    $("#stream3_btn").on("click", function() {
+    $("#barchart3_html").on("click", function() {
         $(".graph1").removeClass('highlight_graph');
         $(".graph2").removeClass('highlight_graph');
         $(".graph3").removeClass('highlight_graph');
@@ -37,23 +37,7 @@ $(document).ready(function() {
     });
 }); 
 
-    $(document).ready(function() {
-    // Create the slideToggle effects each of the paragraphs and
-    // buttons
-    $("#button_effects1").click(function(){
-        $('#par1').slideToggle('1000');
-    });
-    $("#button_effects2").click(function(){
-        $('#par2').slideToggle('1000');
-    });
-    $("#button_effects3").click(function(){
-        $('#par3').slideToggle('1000');
-    });
-    $("#button_effects4").click(function(){
-        $('#par4').slideToggle('1000');
-    });
-});  
-
+   
 // Use the fadeTo effect when the mouse hovers over a specific button
     // and fadeTo again when the mouse is no longer hovering over the button
 
@@ -81,18 +65,7 @@ $(document).ready(function() {
     $("#button_effects4").mouseleave(function(){
         $('#button_effects4').fadeTo(1000, 1);
     });
-    $("#button_effects5").mouseenter(function(){
-        $('#button_effects5').fadeTo(1000, 0.5);
-    });
-    $("#button_effects5").mouseleave(function(){
-        $('#button_effects5').fadeTo(1000, 1);
-    });
-    $("#button_effects6").mouseenter(function(){
-        $('#button_effects6').fadeTo(1000, 0.5);
-    });
-    $("#button_effects6").mouseleave(function(){
-        $('#button_effects6').fadeTo(1000, 1);
-    });
+
 //waits until page is loaded first
 
     $(document).ready(function(){
@@ -119,19 +92,8 @@ $(document).ready(function() {
         $("#hr_dashboard").removeClass("h2_font_size");
         $("#hr_scatterplot").removeClass("h2_font_size");
         $("#hr_piechart").removeClass("h2_font_size");
-        $("#hr_css").removeClass("h2_font_size");
-        $("#hr_mysql").removeClass("h2_font_size");
-        $("#hr_html").addClass("h2_font_size");
     }); 
     
-    $("#hr_css").hover(function(){
-        $("#hr_mysql").removeClass("h2_font_size");
-        $("#hr_python").removeClass("h2_font_size");
-        $("#hr_jquery").removeClass("h2_font_size");
-        $("#hr_django").removeClass("h2_font_size");
-        $("#hr_html").removeClass("h2_font_size");
-        $("#hr_css").addClass("h2_font_size");
-    });
     
     //applies colour black to body background when mouse enters over buttons
 
