@@ -1,4 +1,6 @@
 /*home-page*/
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,600,700|Exo:100,200,300,400,500,600,700');
+
 
  body {
 	background-image: url(../img/earth-adobestock.png);
@@ -10,7 +12,6 @@
 
  }
 
-
 h1{
 	font-size: 3em;
 	text-align: center;
@@ -19,12 +20,12 @@ h1{
 h2 {
 	font-size: 1em;
 	text-align: left;
-
 }
 
 
 p {
-	font-size: .9rem;
+	font-size: .7rem;
+    font-family: 'Dosis';
 }
 
 div {
@@ -59,9 +60,7 @@ div {
 }
 
 .card_para {
-
 	flex:1 0 auto;
-
 }
 
 #container {
@@ -95,11 +94,69 @@ div {
 	background-color: #8c5845;
 }
 
-#my_footer {
-	width:100%;
-	text-align: center;
+/*--------------------------------------------Footer*/
+
+footer {
+    background-color: #e6550d;;
+    color: #fafafa;
+    min-height: 120px;
+    margin: 0;
 }
 
+h3.uppercase.general-sub {
+    font-family: 'Dosis';
+    font-size: .8em;
+    font-weight: 400;
+}
+
+
+h5.uppercase.general-sub {
+    font-family: 'Dosis';
+    font-size: .9em;
+    font-weight: 400;
+    text-align: left;
+
+}
+
+.social-links {
+    padding-bottom: 15px;
+}
+
+.fas-fa-facebook
+.fas-fa-twitter
+.fas-fa-Github
+.fas-fa-instagram
+.fas-fa-youtube {
+    font-size: .5em;
+    font-weight: 500;
+}
+
+#social-links li a i {
+    width: 32px;
+    height: 32px;
+    padding: 12px 0;
+    border-radius: 50%;
+    font-size: 13px;
+    line-height: 7px;
+    text-align: center;
+    color: #fafafa;
+    background: #e6550d;;
+    transition: all 0.35s ease-in-out;
+    -moz-transition: all 0.35s ease-in-out;
+    -webkit-transition: all 0.35s ease-in-out;
+    -o-transition: all 0.35s ease-in-out;
+}
+
+#social-links li a i:hover {
+    background: #e84610;
+}
+
+
+#footer_details {
+	width:100%;
+	text-align: center;
+    margin: 20px;
+}
 
 
 #copyright {

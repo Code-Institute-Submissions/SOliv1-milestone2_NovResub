@@ -8,19 +8,30 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Dosis' rel='stylesheet' type='text/css'>
     <link href="css/style.css" rel="stylesheet">
-    </head>
+</head>
 <body>
+    <nav>
+        <ul>
+            <li id="logoNav">Earth Focus</li>
+            <li><a href="index.html#part1graphs_btn">Scroll Down</a></li>
+            <li><a href="barchart.html">BarChart</a></li>
+            <li><a href="barchart2.html">BarCharts2</a></li>
+            <li><a href="piechart.html">PicChart</a></li>
+            <li><a href="scatterplot.html">ScatterPlot</a></li>
+        </ul>
+    </nav>
+
     <div id="container">
-        <nav>
-            <ul>
-                <li id="logoNav">Earth Focus</li>
-                <li><a href="index.html#part1graphs_btn">Scroll Down</a></li>
-                <li><a href="barchart.html">BarChart</a></li>
-                <li><a href="barchart2.html">BarCharts2</a></li>
-                <li><a href="piechart.html">PicChart</a></li>
-                <li><a href="scatterplot.html">ScatterPlot</a></li>
-            </ul>
-        </nav>
+        <div id="earthFocus" class="row">
+            <div class="col-sm-4">
+                <h5 class="uppercase general-sub">Earth Focus on Population Levels</h5>
+                <p class="inline-block">
+                    United Nations makes projections for future population growth.
+                    Its latest median projection is a population of 9.7bn in 2050 and 10.9bn in 2100. A number of factors affect population growth, it therefore makes projections which depend on different assumptions.
+                    Within a 95% certainty range, the difference in population in 2100 from the highest to lowest projection increses to  a total of almost 4bn people - more than half the population we have today.
+                </p>
+            </div>
+        </div>
         <div class="card graph1">
             <li id="part1graphs_btn"></li>
             <img class="card_image" src="img/1.png" alt=" icon"graph>
@@ -52,9 +63,34 @@
             <button id="button_effects4" class="bottom_button"><a href="piechart.html">Button</a></button>
         </div>
     </div>
+    <footer class="container-fluid">
+        <div id="footer-details" class="row">
+            <div class="col-sm-4">
+                <h5 class="uppercase general-sub">Earth Focus on Population Levels</h5>
+                    <p class="inline-block">
+                         United Nations makes projections for future population growth.
+                         Its latest median projection is a population of 9.7bn in 2050 and 10.9bn in 2100. A number of factors affect population growth, it therefore makes projections which depend on different assumptions.
+                         Within a 95% certainty range, the difference in population in 2100 from the highest to lowest projection increses to  a total of almost 4bn people - more than half the population we have today.
+                    </p>
+            <div class="col-sm-4">
+                <h3 class="uppercase general-sub">Earth Focus Social</h5>
+                <ul class="list-inline social-links">
+                    <li><a target="_blank" href="#"><i class="fas fa-facebook">facebook</i></a></li>
+                    <li><a target="_blank" href="#"><i class="fas fa-twitter">twitter</i></a></li>
+                    <li><a target="_blank" href="#"><i class="fas fa-github">Github</i></a></li>
+                    <li><a target="_blank" href="#"><i class="fas fa-pinterest">pinterest</i></a></li>
+                    <li><a target="_blank" href="#"><i class="fas fa-instagram">instagram</i></a></li>
+                    <li><a target="_blank" href="#"><i class="fas fa-youtube">youtube</i></a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+        <div id="my_footer">
+            <p id="copyright">Copyright Infomation</p>
+        </div>
+    </div>
     <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
-    <script src="js/script.js"></script>
-    <!-- Scripts located at the bottom of the body to insure page is fully loaded before execution -->
+    <script src="script.js"></script>
 </body>
 </html>
 
