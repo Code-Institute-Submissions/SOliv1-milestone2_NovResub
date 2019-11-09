@@ -37,7 +37,8 @@ Continent A string like 'Europe' and the Continent is the same as Country. "In t
 
 
 ### Earth Focus - population by country/continent and area measurement
-I am creating a dynamic dashboard showcasing the data between Country / Continent and Area.
+I am creating a dynamic dashboard showcasing the data between Country / Continent and Area.  
+#### (I ran out of time so did not includethis in the end).  
 
 Population Levels and comparisons between countries and Continents. I want the end user to be able to choose different graphs to show the way data interacts and compares.
 
