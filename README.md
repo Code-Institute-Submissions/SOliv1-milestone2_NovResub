@@ -66,12 +66,14 @@ Tables - Self-explanatory, you can have as many measures and dimensions as you w
 Cover page inspired by my course work in Code Institute
 Bckground image is a preview page from Adobe stock images (from which I have and account)
 My Mentor Brian Mancheria for helping me to try to understand the logistics of Java script and providing me with info to outline a project for myself
-The Tutor support
-The Slack Community
-Thw World Data Bank for data on Population and Environement issues
-Popululation Matters Data 
-DC.JS GETTING STARTED AND HOW-TO GUIDE
-© 2019 GitHub, Inc.
+-The Tutor support
+-The Slack Community
+=Thw World Data Bank for data on Population and Environement issues
+-Popululation Matters Data 
+-Populataion Matters Images where indicated
+-DC.JS GETTING STARTED AND HOW-TO GUIDE
+-© 2019 GitHub, Inc.
+-Diff Checker: https://www.diffchecker.com/
 
 ## Bugs
 I have had considerable problems with this project and my understanding of java script and how it works.
@@ -98,4 +100,4 @@ Since I am currently  unable to master the making of my graphs and have run out 
 #### scatterplot
 Could not make the graph appear with the data for measurements of area and population and dimension - country.  I tried different information from different datasets (see docs folder for ideas and wireframes and datasets), but only got into strife so went back to a basic dataset example.
 #### barcharts2 and dashboard 
-Ditto as above with scatterplot.  I need to build a better understanding of the process of creating interactive dashboards as I like them and am determined to master this situation at some point.  I feel that I am close but I am just not quite grasping it and am waiting for the "lightswitch to come on" so I finally figure them out.
+Ditto as above with scatterplot.  I need to build a better understanding of the process of creating interactive dashboards as I like them and am determined to master this situation at some point.  I feel that I am close but I am just not quite grasping it and am waiting for the "lightswitch to come on".  So I have since populated the site with some pretty pictures of graphs to illustrate until I am finally figure them out.  
