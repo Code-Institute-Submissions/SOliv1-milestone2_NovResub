@@ -6,7 +6,7 @@ $(document).ready(function() {
         $('#button_effects1').hide('slow');
     });
  });
- 
+
    $("#barchart2_html").on("click", function() {
         $(".graph1").removeClass('highlight_graph');
         $(".graph2").removeClass('highlight_graph');
@@ -19,8 +19,8 @@ $(document).ready(function() {
         $(".graph2").removeClass('highlight_graph');
         $(".graph3").removeClass('highlight_graph');
         $(".graph3").addClass('highlight_graph');
-    }); 
-});     
+    });
+});
 
     $(document).ready(function() {
     $("#button_effects1").click(function(){
@@ -35,9 +35,33 @@ $(document).ready(function() {
     $("#button_effects4").click(function(){
         $('#par4').toggle('1000');
     });
-}); 
+});
 
-   
+$(document).ready(function() {
+    // Create the slideToggle effects each of the paragraphs and
+    // buttons
+    $("#button_effects1").click(function(){
+        $('#par1').slideToggle('1000');
+    });
+    $("#button_effects2").click(function(){
+        $('#par2').slideToggle('1000');
+    });
+    $("#button_effects3").click(function(){
+        $('#par3').slideToggle('1000');
+    });
+    $("#button_effects4").click(function(){
+        $('#par4').slideToggle('1000');
+    });
+    $("#button_effects5").click(function(){
+        $('#par5').slideToggle('1000');
+    });
+    $("#button_effects6").click(function(){
+        $('#par6').slideToggle('1000');
+    });
+});
+
+
+
 // Use the fadeTo effect when the mouse hovers over a specific button
     // and fadeTo again when the mouse is no longer hovering over the button
 
@@ -69,21 +93,21 @@ $(document).ready(function() {
 //waits until page is loaded first
 
     $(document).ready(function(){
-    //applies colour red to paragraphs when clicked on 
+    //applies colour red to paragraphs when clicked on
     $("p").click(function(){
         $("p").addClass("highlight_text");
     });
-});    
+});
 
 //will add lightblue to h2 elements
 
     $("h2").hover(function(){
-        $("h2").addClass( "h2_color");   
+        $("h2").addClass( "h2_color");
     });
-    
+
     /*
-    this will apply larger font size to the active h2 element 
-    by adding the h2_font_size class but 
+    this will apply larger font size to the active h2 element
+    by adding the h2_font_size class but
     not the other h2 elements by removing class h2_font_size from them
     */
 
@@ -92,19 +116,19 @@ $(document).ready(function() {
         $("#hr_dashboard").removeClass("h2_font_size");
         $("#hr_scatterplot").removeClass("h2_font_size");
         $("#hr_piechart").removeClass("h2_font_size");
-    }); 
-    
-    
+    });
+
+
     //applies colour black to body background when mouse enters over buttons
 
 
     $(".bottom_button").mouseenter(function(){
-        $("body").css( "background-color", "black"); 
+        $("body").css( "background-color", "black");
     });
 
     //applies colour grey to body background when mouse leaves buttons
 
     $(".bottom_button").mouseleave(function(){
-        $("body").css( "background-color", "#eee"); 
+        $("body").css( "background-color", "#eee");
     });
- 
+
