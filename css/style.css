@@ -19,14 +19,16 @@ h1{
 
 h2 {
 	font-size: 1em;
+	font-family:sans-serif;
+    color: #000;
 	text-align: left;
 }
-
 
 p {
 	font-size: .7rem;
     font-family: 'Dosis';
 }
+
 
 div {
 	border-radius: 4px;
@@ -46,7 +48,7 @@ div {
 	text-align: center;
 	padding: 1em .75em;
 	text-decoration: none;
-	color: #fff;
+	color: #000;
 
 }
 
@@ -59,8 +61,10 @@ div {
 	flex:0;
 }
 
-.card_para {
-	flex:1 0 auto;
+p.card_para {
+    flex: 1 0 auto;
+    color: black;
+    
 }
 
 #container {
@@ -97,7 +101,7 @@ div {
 /*--------------------------------------------Footer*/
 
 footer {
-    background-color: #e6550d;;
+    background-color:transparent;
     color: #fafafa;
     min-height: 120px;
     margin: 0;
@@ -105,7 +109,7 @@ footer {
 
 h3.uppercase.general-sub {
     font-family: 'Dosis';
-    font-size: .8em;
+    font-size: .9em;
     font-weight: 400;
 }
 
@@ -118,18 +122,33 @@ h5.uppercase.general-sub {
 
 }
 
+.btn--cta {
+    font-weight: bold;
+    border-radius: 23px;
+    width: 160px;
+}
+
+.btn--red {
+    color: #fff;
+    background-color: #f05f40;
+
+}
+
+.btn--red:hover,
+.btn--red:active,
+.btn--red:focus,
+.btn--red:active:focus {
+    background-color: #df4929;
+    border-color: #df4929;
+    color: #fff;
+}
+
+
 .social-links {
     padding-bottom: 15px;
 }
 
-.fas-fa-facebook
-.fas-fa-twitter
-.fas-fa-Github
-.fas-fa-instagram
-.fas-fa-youtube {
-    font-size: .5em;
-    font-weight: 500;
-}
+ 
 
 #social-links li a i {
     width: 32px;
@@ -151,16 +170,17 @@ h5.uppercase.general-sub {
     background: #e84610;
 }
 
-
 #footer_details {
 	width:100%;
 	text-align: center;
-    margin: 20px;
+    margin: 35px;
 }
 
+/*--------------------------------------------Beyond-Footer*/
 
 #copyright {
 	margin-top:10px;
+    text-align: center;
 	margin-bottom:10px;
 
 }
@@ -177,6 +197,8 @@ nav {
 	width: 100%;
 }
 
+
+
 ul {
 
 	display: flex;
@@ -186,7 +208,6 @@ ul {
 	border-radius: 10px;
 	list-style-type: none; /*Remove Bullets*/
 	padding: 0;
-
 }
 
 li {
@@ -215,18 +236,18 @@ li {
 }
 
 .border {
-
     border: solid 5px #ccc;
+    }
 
-}
-
+/*--------------------------------------------media-queries*/
  @media screen and (max-width: 700px) {
-	ul {
+
+ul {
 		flex-flow: column;
 		align-items:center;
     }
-	li {
+li {
 		font-size: 2em;
 	}
-}
 
+ }
