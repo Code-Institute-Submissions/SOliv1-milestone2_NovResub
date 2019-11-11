@@ -77,13 +77,19 @@ My Mentor Brian Mancheria for helping me to try to understand the logistics of J
 -Diff Checker: https://www.diffchecker.com/
 
 ## Bugs
+#### Home Page
+My layout is still not right but I am still working on this. 
+
+My social links moved to the right hand side when I deployed it in github.  I am not sure quite why.
+
 I have had considerable problems with this project and my understanding of java script and how it works.
-I really hope to be able to iron these out in time hence the project being unfinished.
+
+I really hope to be able to iron these out in time hence the project being unfinished.  I have not managed to resolve these issues yet.
 I appear to have a lack of understanding on how to manipulate information in the making of the graphs and the calculations involved. Hence I having trouble making my graphs appear and despite the console addressing issues - I was unable to resolve them.
 (Although, I did manage to go through the course modules ok).
 Since I am currently  unable to master the making of my graphs and have run out of time - I have decided that I shall be submitting this project minus at least two of them.  I hope that I shall be able to resolve these issues in future, as I move on in the course.
 
-#### Could not make the colours appear in barchart 
+#### Could not make multiple colours appear in my barchart one.
 .colorAccessor(function (d) {
             if (d.value > 12)   {
                 return "Country";
