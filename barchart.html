@@ -66,6 +66,11 @@
             queue()
             .defer(d3.json, "data/populationcountry.json")
             .await(makeGraphs);
+
+        dc.selectMenu("#container_id")
+            .dimension(dim);
+            .group(group);
+
         dc.barChart
             .colorAccessor(function (d) {
             if (d.value > 12)   {

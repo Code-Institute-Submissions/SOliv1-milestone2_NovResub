@@ -1,17 +1,13 @@
-/**
- * The set of statements that are executed in the browser console to try out
+
+/** The set of statements that are executed in the browser console to try out
  * jQuery selectors
  */
-
-
 
 // Select all of the anchor elements on the page using the `$` as shorthand
 
 // for the `jQuery` function
 
 $("a");
-
-
 
 // The long version of the function
 
@@ -67,11 +63,9 @@ $("p>a");
 $("p a");
 
 
-
 // Get all list item elements that are direct children of unordered lists
 
 $("ul>li");
-
 
 
 // Get all list item elements that are descendants of unordered lists
@@ -105,4 +99,3 @@ $(":header");
 // Modify the contents of all of the paragraph elements on the page
 
 $("p").text("New text");
-

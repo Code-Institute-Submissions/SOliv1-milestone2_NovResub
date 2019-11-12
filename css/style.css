@@ -25,7 +25,7 @@ h2 {
 }
 
 p {
-	font-size: .7rem;
+	font-size: .7em;
     font-family: 'Dosis';
 }
 
@@ -58,13 +58,31 @@ div {
 }
 
 .card_head {
-	flex:0;
+    flex: 0;
+    color: rgb(58, 39, 39);
+    font-family: sans-serif;
+	font-size:.7em;
+}
+
+p.card_par1 {
+    flex: 1 0 auto;
+    color: #000;
+}
+
+p.card_par2 {
+    flex: 1 0 auto;
+    color:#000;
+}
+
+p.card_par3 {
+    flex: 1 0 auto;
+    color: #000;
 }
 
 p.card_para {
     flex: 1 0 auto;
-    color: black;
-    
+    color: #000;
+   
 }
 
 #container {
@@ -249,5 +267,45 @@ ul {
 li {
 		font-size: 2em;
 	}
+/*--------------------------------------------Contact-form*/
 
- }
+.contact-heading {
+    font-family: "Exo", sans-serif;
+    font-weight: 300;
+    margin-top: 25px;
+    margin-bottom: 20px;
+}
+
+
+.center-form {
+    padding-top: 10px;
+    margin: 0 auto;
+    max-width: 70%;
+}
+
+button[type="submit"] {
+    margin-top: 15px;
+    margin-bottom: 20px;
+    background-color: #e84610;
+    color: #fafafa;
+}
+
+
+
+/*--------------------------------------------centre-formmedia queries*/
+
+@media(min-width: 992px) {
+    .section-column {
+        padding: 0 20px 20px;
+        float: left;
+        display: table-cell;
+    }
+
+    .center-form {
+        padding-top: 20px;
+        min-height: 240px;
+        margin: 0 auto;
+        max-width: 50%;
+    }
+}
+

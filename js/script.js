@@ -1,31 +1,25 @@
-    $(document).ready(function() {
-      -$("#barchart_1").show() 
-        $("#barchart_1").show(1000);
+$(document).ready(function() {
+    -$("#index.html#part1graphs_btn").show() 
+        $("#index.html#part1graphs_btn").show(1000);
         $("#button_effects1").click(function(){
         $('#button_effects1').hide('slow');
-        });
+    });
+});
+
+    $("#barChart2_html").on("click", function() {
+        $(".barchart2").removeClass('highlight_barchart');
+        $(".piechart").removeClass('highlight_graph');
+        $(".scatterplot").removeClass('highlight_graph');
+        $(".barchart2").addClass('highlight_graph');
     });
 
-   $("#barchart2_html").on("click", function() {
-        $(".graph1").removeClass('highlight_graph');
-        $(".graph2").removeClass('highlight_graph');
-        $(".graph3").removeClass('highlight_graph');
-        $(".graph2").addClass('highlight_graph');
-   });
-
-    $("#barchart3_html").on("click", function() {
-        $(".graph1").removeClass('highlight_graph');
-        $(".graph2").removeClass('highlight_graph');
-        $(".graph3").removeClass('highlight_graph');
-        $(".graph3").addClass('highlight_graph');
+    $("#barChart4_html").on("click", function() {
+        $(".barchart2").removeClass('highlight_graph');
+        $(".piechart").removeClass('highlight_graph');
+        $(".scatterplot").removeClass('highlight_graph');
+        $(".scatterplot").addClass('highlight_graph');
     });
 
-    $("#barchart4_html").on("click", function() {
-        $(".graph2").removeClass('highlight_graph');
-        $(".graph3").removeClass('highlight_graph');
-        $(".graph4").removeClass('highlight_graph');
-        $(".graph4").addClass('highlight_graph');
-    });
 
 
     $(document).ready(function() {
@@ -41,11 +35,13 @@
     $("#button_effects4").click(function(){
         $('#par4').toggle('1000');
     });
-});$(document).ready(function() {
-    -$("#barchart_html").on("click", function() {
-  
+});
 
-$(document).ready(function() {
+
+    $(document).ready(function() {
+        -$("#barChart_html").on("click", function() {
+  
+    $(document).ready(function() {
     // Create the slideToggle effects each of the paragraphs and
     // buttons
 
@@ -96,7 +92,7 @@ $(document).ready(function() {
     $("h2").hover(function(){
         $("h2").addClass( "h2_color");
     });
-
+});
     /*
     this will apply larger font size to the active h2 element
     by adding the h2_font_size class but
@@ -109,11 +105,15 @@ $(document).ready(function() {
         $("#hr_scatterplot").removeClass("h2_font_size");
         $("#hr_piechart").removeClass("h2_font_size");
     });
-
-
+});
     //applies colour black to body background when mouse enters over buttons
 
     $(".bottom_button").mouseenter(function(){
-        $("body").css( "background-color", "black");
+        $("body").piechart( "background-color", "black"); 
     });
+        
+    //applies colour grey to body background when mouse leaves buttons
 
+    $(".bottom_button").mouseleave(function(){
+        $("body").piechart( "background-color", "#eee"); 
+    });
