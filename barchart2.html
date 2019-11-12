@@ -8,49 +8,46 @@
 
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Dosis' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
-    <link rel="stylesheet" href="css/dc.min.css" type="text/css" />
-    <link rel="stylesheet" href="css/style.css" type="text/css" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="./css/dc.min.css" type="text/css" />
+    <link rel="stylesheet" href="./css/style.css" type="text/css" />
+    <link rel="stylesheet" href="./css/style1.css" type="text/css" />
 
     <script src="https://kit.fontawesome.com/1e03de6694.js" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="static/js/d3.min.js"></script>
-    <script type="text/javascript" src="static/js/crossfilter.min.js"></script>
-    <script type="text/javascript" src="static/js/dc.min.js"></script>
-    <script type="text/javascript" src="static/js/graph.js"></script>
-    <script type="text/javascript" src="static/js/queue.min.js"></script>
+    <script type="text/javascript" src="./js/d3.min.js"></script>
+    <script type="text/javascript" src="./js/crossfilter.min.js"></script>
+    <script type="text/javascript" src="./js/dc.min.js"></script>
+    <script type="text/javascript" src="./js/graph.js"></script>
+    <script type="text/javascript" src="./js/queue.min.js"></script>
 </head>
-
-
-<body>
 <body>
     <div>
         <div class="menu" style="width:200px;">
-        <select class="dc-select-menu">
-            <option value="">Select all</option>
-            <option class="dc-select-option" value="Country">Country</option>
-            <option class="dc-select-option" value="Population">Population</option>
-            <option class="dc-select-option" value="Population">Continent</option>
-            <option class="dc-select-option" value="Area">Area</option>
-        </select>
-    </div>
-
-    <div>
-      <div id="container">
-            <nav>
-                <ul>
-                    <li id="logoNav">Earth Focus</li>
-                    <li><a href="index.html#part1graphs_btn">Home</a></li>
-					<li><a href="barchart.html">BarChart</a></li>
-                    <li><a href="barchart2.html">BarCharts2</a></li>
-                    <li><a href="piechart.html">PicChart</a></li>
-                    <li><a href="scatterplot.html">ScatterPlot</a></li>
-                </ul>
-            </nav>
+            <select class="dc-select-menu">
+                <option value="">Select all</option>
+                <option class="dc-select-option" value="Country">Country</option>
+                <option class="dc-select-option" value="Population">Population</option>
+                <option class="dc-select-option" value="Population">Continent</option>
+                <option class="dc-select-option" value="Area">Area</option>
+            </select>
         </div>
     </div>
 
-    <main>
-      <section class="section">
+    <div id="container">
+        <nav>
+            <ul>
+                <li id="logoNav">Earth Focus</li>
+                <li><a href="index.html#part1graphs_btn">Home</a></li>
+				<li><a href="barchart.html">BarChart</a></li>
+                <li><a href="barchart2.html">BarCharts2</a></li>
+                <li><a href="piechart.html">PicChart</a></li>
+                <li><a href="scatterplot.html">ScatterPlot</a></li>
+            </ul>
+        </nav>
+    </div>
+
+
+    <section class="section">
         <div class="container">
             <div class="row">
                 <div>
@@ -70,11 +67,8 @@
                 <i class="fas fa-chart-bar"  aria-hidden="true"></i><span class="number-box" id="percent-of-Population"></span>
                 <i class="fas fa-chart-area" aria-hidden="true"></i> <span class="number-box" id="percent-of-Area"></span>
             </div>
-          </div>
         </div>
     </section>
-
-
     <section class="section">
         <div class="container">
           <div class="row">
@@ -92,33 +86,61 @@
               <div class="col-xs-12 col-sm-4 text-center" id="average-Area" class="custom-chart"></div>
               <div class="col-xs-12 col-sm-4 text-center" id="rank-distribution" class="custom-chart"></div>
             </div>
-          </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="section">
-          <div class="container">
-
+    <section class="section">
+        <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-sm-12 text-center">
                 <p class="section-paragraph">There appears to be little or no correlation between population and size of an area.</p>
-                </div>
+            </div>
             <div class="col-xs-12 col-sm-12 text-center" id="population-Area">
             </div>
-          </div>
         </div>
-      </section>
+    </section>
 
-      <section class="section">
+    <section class="section">
         <div class="container">
-
             <div class="row">
                 <div class="col-xs-12 col-sm-12 text-center">
                 <p class="section-paragraph">There is a very loose correlation between population and area.</p>
-                </div>
+            </div>
             <div class="col-xs-12 col-sm-12 text-center" id="Area-Population"></div>
             </div>
         </div>
-      </section>
-    </main>
+    </section>
+
+    <footer class="container-fluid">
+        <div id="footer-details" class="row">
+            <div class="col-sm-4">
+                <h5 class="uppercase general-sub">About</h5>
+                    <p class="inline-block">
+                         Figures regarding populations of different continents do not reflect any assumptions about future migration, however.
+                         Climate change, poverty and population pressures themselves will lead to a highly mobile global population, with Africa likely to be the largest source of emigrants.
+                    </p>
+            <div class="col-sm-4">
+                <h5 class="uppercase general-sub">Earth Focus Social</h5>
+                    <ul class="list-inline social-links">
+                        <li><a target="_blank" href="#"><i class="fab fa-facebook">facebook</i></a></li>
+                        <li><a target="_blank" href="#"><i class="fab fa-twitter">twitter</i></a></li>
+                        <li><a target="_blank" href="#"><i class="fab fa-github">Github</i></a></li>
+                        <li><a target="_blank" href="#"><i class="fab fa-pinterest">pinterest</i></a></li>
+                        <li><a target="_blank" href="#"><i class="fab fa-instagram">instagram</i></a></li>
+                        <li><a target="_blank" href="#"><i class="fab fa-youtube">youtube</i></a></li>
+                    </ul>
+                </div>
+            </div>
+    </footer>
+        <div id="my_footer">
+            <p id="copyright">Copyright Infomation</p>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+    <script
+        type="text/javascript"
+        src="https://use.fontawesome.com/releases/v5.11.2/js/conflict-detection.js">
+    </script>
 </body>
 </html>
