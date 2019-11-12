@@ -33,9 +33,6 @@ I am using a combination of my tutorials and libraries to create my graphs. I ha
 -Jquery to demonstrate DOM manipulation -Bootstrap Cosmos to help with styling -D3 helps bring data to life using HTML, SVG, and CSS. It allows User to create anything from an HTML table to a Pie chart, from -graphs and bar charts to geospatial maps -Make graph technologies; Crossfilter / DC / JSon
 github to deploy my website; AWS Cloud9 followed by gitpod as soon as I heard thichs was available I swithced over to the gitpod platform as I found it more straight forward to use. "wget" command to retrieve data from other websites and json.
 
-#### Tests
-github, edge, firefox and chrome.  I did not usMy e jasmine as I did not fully understand it and also probably did not need too either on this project.  
-
 #### Types of Fields
 Differences Measurements and Dimensions
 There are two types of fields, dimensions and measures, based on the role they play in the data:
@@ -49,8 +46,14 @@ D3 provides tools to generate charts out of JSON data. These charts could be tie
 ###  Credits
 Cover page inspired by my course work in Code Institute Bckground image is a preview page from Adobe stock images (from which I have and account) My Mentor Brian Mancheria for helping me to try to understand the logistics of Java script and providing me with info to outline a project for myself -The Tutor support -The Slack Community =Thw World Data Bank for data on Population and Environement issues-Popululation Matters Data -Populataion Matters Images where indicated -DC.JS GETTING STARTED AND HOW-TO GUIDE -© 2019 GitHub, Inc. -Diff Checker: https://www.diffchecker.com/
 My tutors and my Mentor Brian who has been very patient in helping me to understand java script and graphs.
-### Bugs
 
+### Tests
+##### github-the four box cover page was not evenly distributed in two rows of two boxes as it was in gitpod; 
+##### edge-social links were slightly different colours; 
+##### firefox and chrome.  
+##### I did not use jasmine as I did not fully understand it and also probably did not need too either on this project.  
+
+### Bugs
 #### Home Page
  My layout is still not right but I am still working on this.
 
