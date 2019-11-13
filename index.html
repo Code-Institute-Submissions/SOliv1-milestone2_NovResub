@@ -1,76 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Earth Focus scatter-plot</title>
-
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
-    <link rel="stylesheet" href="css/dc.min.css" type="text/css" />
-    <link rel="stylesheet" href="css/style.css" type="text/css" />
-    <link rel="stylesheet" href="css/style1.css" type="text/css" />
-
-    <script type="text/javascript" src="js/d3.min.js"></script>
-    <script type="text/javascript" src="js/crossfilter.min.js"></script>
-    <script type="text/javascript" src="js/dc.min.js"></script>
-    <script type="text/javascript" src="js/graph.js"></script>
-    <script type="text/javascript" src="js/queue.min.js"></script>
-</head>
-<body>
-<div id="container-fluid">
-        <nav>
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Earth Focus scatter-plot</title>
+      <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+      <link rel="stylesheet" href="css/dc.min.css" type="text/css">
+      <link rel="stylesheet" href="css/style.css" type="text/css">
+      <link rel="stylesheet" href="css/style1.css" type="text/css">
+      <script src="js/d3.min.js"></script>
+      <script src="js/crossfilter.min.js"></script>
+      <script src="js/dc.min.js"></script>
+      <script src="js/graph.js"></script>
+      <script src="js/queue.min.js"></script>
+   </head>
+   <body>
+      <div id="container-fluid">
+         <nav>
             <ul>
-                <li id="logoNav">Earth Focus</li>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="barchart.html">BarChart</a></li>
-                 <!-- <li><a href="barchart2.html">BarChart2</a></li> -->
-                <li><a href="piechart.html">PieChart</a></li>
-                <li><a href="scatterplot.html">ScatterPlot</a></li>
+               <li id="logoNav">Earth Focus</li>
+               <li><a href="index.html">Home</a></li>
+               <li><a href="about.html">About</a></li>
+               <li><a href="barchart.html">BarChart</a></li>
+               <!-- <li><a href="barchart2.html">BarChart2</a></li> -->
+               <li><a href="piechart.html">PieChart</a></li>
+               <li><a href="scatterplot.html">ScatterPlot</a></li>
             </ul>
-        </nav>
-    </div>
-        <h1>Earth Focus</h1>
-    <div>
-        <h2 id="quote">"Our vision is of a future with decent living standards for all, on a healthy, biodiverse planet."</h2>
-        <h4><span class="center">Sir David Attenborough, Population Matters patron</span></h4>
-    </div>
-    
-
-    <footer class="container-fluid">
-        <div id="footer-details" class="row">
+         </nav>
+      </div>
+      <h1>Earth Focus</h1>
+      <div>
+         <h2 id="quote">"Our vision is of a future with decent living standards for all, on a healthy, biodiverse planet."</h2>
+         <h4><span class="center">Sir David Attenborough, Population Matters patron</span></h4>
+      </div>
+      <footer class="container-fluid">
+         <div id="footer-details" class="row">
             <div class="col-sm-4">
-                <h5 class="uppercase general-sub">About</h5>
-                <p class="inline-block">
-                    Figures regarding populations of different continents do not reflect any assumptions about future migration, however.
-                    Climate change, poverty and population pressures themselves will lead to a highly mobile global population, with Africa likely to be the largest source of emigrants.
-                </p>
-            <div class="col-sm-4">
-                <h5 class="uppercase general-sub">Earth Focus Social</h5>
-                    <ul class="list-inline social-links">
-                        <li><a target="_blank" href="https://facebook.com"><i class="fab fa-facebook">facebook</i></a></li>
-                        <li><a target="_blank" href="https://twitter.com"><i class="fab fa-twitter">twitter</i></a></li>
-                        <li><a target="_blank" href="https://github.com"><i class="fab fa-github">Github</i></a></li>
-                        <li><a target="_blank" href="https://pinterest.com"><i class="fab fa-pinterest">pinterest</i></a></li>
-                        <li><a target="_blank" href="https://instagram.com"><i class="fab fa-instagram">instagram</i></a></li>
-                        <li><a target="_blank" href="https://youtube.com"><i class="fab fa-youtube">youtube</i></a></li>
-                    </ul>
-                </div>
+               <h5 class="uppercase general-sub">About</h5>
+               <p class="inline-block">
+                  Figures regarding populations of different continents do not reflect any assumptions about future migration, however.
+                  Climate change, poverty and population pressures themselves will lead to a highly mobile global population, with Africa likely to be the largest source of emigrants.
+               </p>
+               <div class="col-sm-4">
+                  <h5 class="uppercase general-sub">Earth Focus Social</h5>
+                  <ul class="list-inline social-links">
+                     <li><a target="_blank" href="https://facebook.com"><i class="fab fa-facebook">facebook</i></a></li>
+                     <li><a target="_blank" href="https://twitter.com"><i class="fab fa-twitter">twitter</i></a></li>
+                     <li><a target="_blank" href="https://github.com"><i class="fab fa-github">Github</i></a></li>
+                     <li><a target="_blank" href="https://pinterest.com"><i class="fab fa-pinterest">pinterest</i></a></li>
+                     <li><a target="_blank" href="https://instagram.com"><i class="fab fa-instagram">instagram</i></a></li>
+                     <li><a target="_blank" href="https://youtube.com"><i class="fab fa-youtube">youtube</i></a></li>
+                  </ul>
+               </div>
             </div>
-        </div>    
-    </footer>
-        <div id="my_footer">
-            <p id="copyright">Copyright Infomation</p>
-        </div>
-    </div>
-    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
-    <script src="script.js"></script>
-    <script
-        type="text/javascript"
-        src="https://use.fontawesome.com/releases/v5.11.2/js/conflict-detection.js">
-    </script>
-</body>
+         </div>
+      </footer>
+      <div id="my_footer">
+         <p id="copyright">Copyright Information</p>
+      </div>
+      <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+      <script src="script.js"></script>
+      <script src="https://use.fontawesome.com/releases/v5.11.2/js/conflict-detection.js"></script>
+   </body>
 </html>
-
-
