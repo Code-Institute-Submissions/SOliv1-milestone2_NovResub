@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,55 +24,33 @@
 
 <body>
     <div>
-        <div class="menu" style="width:200px;">
-        <select class="dc-select-menu">
-            <option value="">Select all</option>
-            <option class="dc-select-option" value="Country">Country</option>
-            <option class="dc-select-option" value="Population">Population</option>
-            <option class="dc-select-option" value="Population">Continent</option>
-            <option class="dc-select-option" value="Area">Area</option>
-        </select>
+        <p>Legend</p>
+        <div id="discipline-selector"></div>
+        <div id="population-balance"></div>
+        <div id="specific-country"></div>
+        <div id="specific-continent"></div>
+        <div id="average-area"></div>
+    </div>
+
+
+    <div>
+        <h3>Total Population per Country</h3>
+        <div id="per-country-chart"></div>
     </div>
 
     <div>
-    <div id="container">
-        <div class="row">
-            <nav>
-                <ul>
-                    <li id="logoNav">Earth Focus</li>
-                    <li><a href="index.html#part1graphs_btn">Home</a></li>
-                    <li><a href="barchart.html">BarChart</a></li>
-                    <li><a href="piechart.html">PicChart</a></li>
-                    <li><a href="scatterplot.html">ScatterPlot</a></li>
-                </ul>
-            </nav>
-            <div class="col-6-8">
-                <div class="card graph1" >
-                    <h3>Total Population per Country</h3>
-                <div id="per-country-chart"></div>
-            </div>
-        </row>
-        <div>
-        <div class="card graph2" >
         <h3>Total Population Per Continent</h3>
         <div id="per-continent-chart"></div>
-        </div>
-        <div>
-        <div class="card graph3" >
+    </div>
+    <div>
         <h3>Total Area Per Continent</h3>
-        <div id="per-area-chart">
-        </div>
+        <div id="per-area-chart"></div>
     </div>
     <script>
-            queue()
+        queue()
             .defer(d3.json, "data/populationcountry.json")
             .await(makeGraphs);
-
-        dc.selectMenu("#container_id")
-            .dimension(dim);
-            .group(group);
-
-        dc.barChart
+        chart
             .colorAccessor(function (d) {
             if (d.value > 12)   {
                 return "Country";
@@ -86,7 +65,7 @@
                 return "test4";
             }
         })
-            function makeGraphs(error, populationcountryData)   {
+    function makeGraphs(error, populationcountryData)   {
             var ndx = crossfilter(populationcountryData);
             var country_dim = ndx.dimension(dc.pluck('Country'))
             var total_population_per_country = country_dim.group().reduceSum(dc.pluck('Population'));
@@ -137,4 +116,5 @@
         }
     </script>
 </body>
+
 </html>

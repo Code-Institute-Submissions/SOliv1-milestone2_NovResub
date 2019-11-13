@@ -54,8 +54,17 @@ My tutors and my Mentor Brian who has been very patient in helping me to underst
 ##### I did not use jasmine as I did not fully understand it and also probably did not need too either on this project.  
 
 ### Bugs
-#### Home Page
- My layout is still not right but I am still working on this.
+#### Home Page - major bug issue 
+#### unresolved
+Below is the link to a home page I created but cannot deploy as somehow the links have caused issues with both my bar chart and my pie chart not rendering on the webpage.
+
+https://8000-d2264e7f-c97d-48d2-b0ad-7b63896e9c67.ws-eu01.gitpod.io/piechart.html
+
+ My layout is still not right but I am still working on this.  It is unresolved.  For some reason the last page on the website has become the home page.
+
+https://8000-d2264e7f-c97d-48d2-b0ad-7b63896e9c67.ws-eu01.gitpod.io/index.html#part1graphs_btn
+
+Another example of my home page above I am unable to deploy due to menu links - Both home pages are interactive using Jquery.
 
 #### My social links moved to the right hand side when I deployed it in github. I am not sure quite why.
 

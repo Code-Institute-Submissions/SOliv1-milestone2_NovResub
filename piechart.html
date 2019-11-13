@@ -2,117 +2,99 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Earth Focus</title>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" />
-    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Dosis' rel='stylesheet' type='text/css'>
-    <link href="css/style.css" rel="stylesheet">
+    <title>Earth Focus PieChart</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dc/2.1.8/dc.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+    
 
-    <script src="https://kit.fontawesome.com/1e03de6694.js" crossorigin="anonymous"></script>
+    <style>
+        div {
+            clear: left;
+        }
+    </style>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crossfilter/1.3.12/crossfilter.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/dc/2.1.8/dc.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/queue-async/1.0.7/queue.min.js"></script>
 </head>
 <body>
+    <div>
+        <div class="menu" style="width:200px;">
+        <select class="dc-select-menu">
+            <option value="">Select all</option>
+            <option class="dc-select-option" value="Country">Country</option>
+            <option class="dc-select-option" value="Population">Population</option>
+            <option class="dc-select-option" value="Population">Continent</option>
+            <option class="dc-select-option" value="Area">Area</option>
+        </select>
+    </div>
+
     <div id="container">
-     <!-- Start-main-menu-->
-        <nav>
-            <ul>
-                <li id="logoNav">Earth Focus</li>
-                <li><a href="index.html#part1graphs_btn">Scroll Down</a></li>
-                <li><a href="barchart.html">BarChart</a></li>
-                <li><a href="barchart2.html">BarCharts2</a></li>
-                <li><a href="piechart.html">PieChart</a></li>
-                <li><a href="scatterplot.html">ScatterPlot</a></li>
-            </ul>
-        </nav>
-         <!-- End-main-menu-->
-         <!-- Start-graph-cards-->
-        <div class="card graph1">
-            <li id="part1graphs_btn"></li>
-            <img class="card_image" src="img/1.png" alt=" icon"graph>
-            <div class="card_bottom">
-                <h2 class="card_head">Graph One</h2>
-                <p class="card_par1"></p>
-                <button class="bottom_button" id="button_effects1"><a href="barchart.html">Button</a>
-                </button>
-            </div>
+        <div class="row">
+            <nav>
+                <ul>
+                    <li id="logoNav">Earth Focus</li>
+                    <li><a href="index.html#part1graphs_btn">Home</a></li>
+                    <li><a href="barchart.html">BarChart</a></li>
+                    <li><a href="barchart2.html">BarChart</a></li>
+                    <li><a href="piechart.html">PicChart</a></li>
+                    <li><a href="scatterplot.html">ScatterPlot</a></li>
+                </ul>
+            </nav>
         </div>
-        <div class="card graph2_btn">
-            <li id="graph2_btn"></li>
-            <img class="card_image" src="img/2.png" alt="scatterplot icon">
-            <h2 class="card_head">Scatterplot</h2>
-            <p class="card_par2"></p>
-            <button id="button_effects2" class="bottom_button"><a href="scatterplot.html">Button</a>
-            </button>
+    </div>        
+    <h3>Total Population Per Country</h3>
+    <div id="per-Country-chart"></div>    </div>
+    <div>
+        <h3>Total Population Per Continent</h3>
+        <div id="per-Continent-chart"></div>
+    </div>
+    <div>
+        <h3>Total Area Per Continent</h3>
+        <div id="per-Area-chart"></div>
+    </div>
+    
+    <script>
+        queue()
+            .defer(d3.json, "data/populationcountry.json")
+            .await(makeGraphs);
+        function makeGraphs(error, populationcountryData) {
+            var ndx = crossfilter(populationcountryData);
+            var country_dim = ndx.dimension(dc.pluck('Country'));
+            var total_population_per_country = country_dim.group().reduceSum(dc.pluck('Population'));
+            dc.pieChart('#per-Country-chart')
+                .height(330)
+                .radius(90)
+                .transitionDuration(1500)
+                .dimension(country_dim)
+                .group(total_population_per_country);
+            var continent_dim = ndx.dimension(dc.pluck('Continent'));
+            var total_population_per_continent = continent_dim.group().reduceSum(dc.pluck('Population'));
+            dc.pieChart('#per-Continent-chart')
+                .height(330)
+                .radius(90)
+                .transitionDuration(1500)
+                .dimension(continent_dim)
+                .group(total_population_per_continent);
+            var area_dim = ndx.dimension(dc.pluck('Area'));
+            var total_area_per_continent = continent_dim.group().reduceSum(dc.pluck('Area'));
+            dc.pieChart('#per-Area-chart')
+                .height(330)
+                .radius(90)
+                .transitionDuration(1500)
+                .dimension(continent_dim)
+                .group(total_area_per_continent);
+            dc.renderAll();
+        }
+    </script>
+    
+    <div id="my_footer">
+        <div class="col-sm-4">
+            <p id="copyright">Copyright Infomation</p>
         </div>
-        <div class="card graph3">
-            <li id="graph3_btn"></li>
-            <img class="card_image" src="img/3.png" alt="graph icon">
-            <h2 class="card_head">Bar-Chart</h2>
-            <p class="card_par3"></p>
-            <button id="button_effects3" class="bottom_button"><a href="barchart2.html">Button</a>
-            </button>
-        </div>
-        <div class="card graph4">
-            <li id="graph4_btn"></li>
-            <img class="card_image" src="img/4.png" alt="pie graph">
-			<div class="card_bottom">
-				<h2 class="card_head">Pie Graph</h2>
-                <p class="card_para">United Nations makes projections for future population growth.
-                 Latest median projection focuses on a population of 9.7bn in 2050 and 10.9bn in 2100. As number of factors affect population growth, projections can therefore depend on different assumptions.
-                 Within a 95% certainty range, the difference in population in 2100 from the highest to lowest projection increses to  a total of almost 4bn people - more than half the population we have today.
-                 *Info gathered from the website of populationmatters.org
-                </p>
-                <button id="button_effects4" class="bottom_button"><a href="piechart.html">Button</a>
-                </button>
-            </div>
-        </div>
-         <!-- End-graph-cards-->
-
-
-        <section class="container-fluid">
-            <div class="row"><h4 class="contact-us">Contact us to find out more</h4>
-                <div class="col">
-                    <h3 class="contact-heading uppercase text-center">Want to find out more about Earth Focus data projects ?</h3>
-                    <h5 class="uppercase text-center">Contact us and let's work together!</h5>
-
-                    <div class="center-form">
-                    <form>
-                        <input type="text" name="name" id="fullname" class="form-control" placeholder="Name" required />
-                        <input type="email" name="email" id="emailaddress" class="form-control" placeholder="Email" required />
-                        <textarea rows="5" name="informationsummary" id="informationsummary" class="form-control" placeholder="description" required></textarea>
-                        <div class="form-row text-center">
-                            <div class="col">
-                            <button type="submit" class="btn btn-secondary">Send us a Request</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </section>
-
-          <!-- Start-Social-links-->
-        <div class="my_footer">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-xs-12 col-sm-12 col-md-4">
-                        <h5 class="uppercase general-sub">Earth Focus Social</h5>
-                        <ul class="list-inline social-links">
-                        <li><a target="_blank" href="https://facebook.com"><i class="fab fa-facebook"></i></a></li>
-                        <li><a target="_blank" href="https://twitter.com"><i class="fab fa-twitter-square"></i></a></li>
-                        <li><a target="_blank" href="https://github.com"><i class="fab fa-github-square"></i></a></li>
-                        <li><a target="_blank" href="https://linkedin.com"><i class="fab fa-linkedin"></i></a></li>
-                        <li><a target="_blank" href="https://pinterest.com"><i class="fab fa-pinterest-square"></i></a></li>
-                        <li><a target="_blank" href="https://www.instagram.com"><i class="fab fa-instagram"></i></i></a></li>
-                        <li><a target="_blank" href="https://youtube.com"><i class="fab fa-youtube-square"></i></a></li>
-                    </ul>
-                </div>
-                <div>
-                <p id="copyright">Copyright Infomation</p>
-                </div>
-            </div>
-        </footer>
-    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
-    <script src="js/script.js"></script>
+    </div>              
 </body>
 </html>
+

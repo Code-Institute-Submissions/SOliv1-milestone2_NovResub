@@ -12,6 +12,7 @@ Statistics and wildlife anyalictics as a guide to how we can readdress the balan
 resources and links to data and other websites.  
 Readdress the balance of population and  Country / Continent and Habitat and Species and how they correlate with each other.
 Reverse Climate Change in theory via data correlation and achieving a balanced perspective to try to understand the real world and what can be done to achieve this in practice.
+
 #### The Cards
 create a climate change dataset.
 Add data and graphs explaining the data
@@ -25,7 +26,7 @@ Finding solutions
 What are the solutions
 Implementing the solutions for planet health
 
-### Earth Focus - population by country/continent and area measurement
+### Earth Focus - population by country/continent and area measurement - *not started yet- future possibility.
 I am creating a dynamic dashboard showcasing the data between Country / Continent and Area.
 
 Population Levels and comparisons between countries and Continents. I want the end user to be able to choose different graphs to show the way data interacts and compares.
@@ -37,12 +38,15 @@ Continent A string like 'Europe' and the Continent is the same as Country. "In t
 
 
 ### Earth Focus - population by country/continent and area measurement
+https://soliv1.github.io/milestone2/barchart.html
+
 I am creating a dynamic dashboard showcasing the data between Country / Continent and Area.  
 #### (I ran out of time so did not includethis in the end).  
 
 Population Levels and comparisons between countries and Continents. I want the end user to be able to choose different graphs to show the way data interacts and compares.
 
 I am using a combination of my tutorials and libraries to create my graphs. I had selected code from #Stack Overflow to assist with colouring my barcharts.
+Please find a wireframe and other info and datasets (using wget methed in terminal) in the docs folder attached.
 
 ## Technologies Used
 -Jquery to demonstrate DOM manipulation
@@ -90,6 +94,9 @@ I appear to have a lack of understanding on how to manipulate information in the
 Since I am currently  unable to master the making of my graphs and have run out of time - I have decided that I shall be submitting this project minus at least two of them.  I hope that I shall be able to resolve these issues in future, as I move on in the course.
 
 #### Could not make multiple colours appear in my barchart one.
+
+https://d2264e7f-c97d-48d2-b0ad-7b63896e9c67.ws-eu01.gitpod.io/#/workspace/milestone2
+
 .colorAccessor(function (d) {
             if (d.value > 12)   {
                 return "Country";
@@ -106,5 +113,15 @@ Since I am currently  unable to master the making of my graphs and have run out 
         })
 #### scatterplot
 Could not make the graph appear with the data for measurements of area and population and dimension - country.  I tried different information from different datasets (see docs folder for ideas and wireframes and datasets), but only got into strife so went back to a basic dataset example.
+https://soliv1.github.io/milestone2/scatterplot.html
+
+#### My Picchart
+My piechart is not perfect but I am reasonably happy with it.
+https://soliv1.github.io/milestone2/piechart.html
+
+
 #### barcharts2 and dashboard 
 Ditto as above with scatterplot.  I need to build a better understanding of the process of creating interactive dashboards as I like them and am determined to master this situation at some point.  I feel that I am close but I am just not quite grasping it and am waiting for the "lightswitch to come on".  So I have since populated the site with some pretty pictures of graphs to illustrate until I am finally figure them out.  
+### ReadME.md Continued at: <link rel="" href="./docs/README.md" type="text/css" />
+
+
