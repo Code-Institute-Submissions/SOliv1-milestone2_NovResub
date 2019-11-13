@@ -243,11 +243,14 @@ li {
 #logoNav {
     font-family: sans-serif;
     text-align: left;
-    font-size: 2em;
+    font-size: 1.25em;
     font-weight: bold;
     color: black;
 }        
 
+.center {
+    text-align: center;
+}
 .underline {
     text-decoration:none;
 
@@ -255,7 +258,7 @@ li {
 
 .border {
     border: solid 5px #ccc;
-    }
+}
 
 /*--------------------------------------------media-queries*/
  @media screen and (max-width: 700px) {
