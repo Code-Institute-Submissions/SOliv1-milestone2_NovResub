@@ -18,10 +18,10 @@ h1{
 }
 
 h2 {
-	font-size: 1em;
+	/* font-size: 1em; */
 	font-family:sans-serif;
-    color: #000;
-	text-align: left;
+    color: #fff;
+	text-align: center;
 }
 
 p {
@@ -29,7 +29,10 @@ p {
     font-family: 'Dosis';
 }
 
-
+.inline-block {
+    text-align: center;
+    font-size:18px;
+}
 div {
 	border-radius: 4px;
 }
