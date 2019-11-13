@@ -1,11 +1,11 @@
 $(document).ready(function() {
-    -$("#index.html#part1graphs_btn").show() 
-        $("#index.html#part1graphs_btn").show(1000);
+    -$("#barchart_html").on("click", function() {
+        $(".graph1").show();
+        $(".graph1").show(1000);
         $("#button_effects1").click(function(){
         $('#button_effects1').hide('slow');
     });
-});
-
+ });
 
     $(document).ready(function() {
     $("#button_effects1").click(function(){
@@ -22,18 +22,10 @@ $(document).ready(function() {
     });
 });
 
+   // Get all elements that contain an ID of `logoNav`
 
-    $(document).ready(function() {
-        -$("#barChart_html").on("click", function() {
-  
-    $(document).ready(function() {
-    // Create the slideToggle effects each of the paragraphs and
-    // buttons
+    $("#logoNav");
 
-    $("#button_effects4").click(function(){
-        $('#par4').slideToggle('1000');
-    });
-});
 
 // Use the fadeTo effect when the mouse hovers over a specific button
     // and fadeTo again when the mouse is no longer hovering over the button
@@ -77,14 +69,15 @@ $(document).ready(function() {
     $("h2").hover(function(){
         $("h2").addClass( "h2_color");
     });
-});
+
     
     //applies colour black to body background when mouse enters over buttons
 
+
     $(".bottom_button").mouseenter(function(){
-        $("body").piechart( "background-color", "black"); 
+        $("body").css( "background-color", "black");
     });
-        
+
     //applies colour grey to body background when mouse leaves buttons
 
     $(".bottom_button").mouseleave(function(){
