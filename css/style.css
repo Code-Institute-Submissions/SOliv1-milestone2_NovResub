@@ -3,7 +3,7 @@
 
 
  body {
-	background-image: url(../img/earth-adobestock.png);
+	background-image: url(../img/earth.png);
 	background-size: cover;
     background-repeat: no-repeat;
     height: 100%;
@@ -209,7 +209,7 @@ Navigation
 
 nav {
 
-	font-family: roboto;
+	font-family: "Roberto";
 	background-color: #eee;
 	margin: 30px auto;
 	width: 100%;
@@ -241,12 +241,12 @@ li {
 }
 
 #logoNav {
-	flex:6;
-	text-align: left;
-	font-size: 2em;
-	font-weight: bold;
-    color:black;
-}
+    font-family: sans-serif;
+    text-align: left;
+    font-size: 2em;
+    font-weight: bold;
+    color: black;
+}        
 
 .underline {
     text-decoration:none;
@@ -267,6 +267,14 @@ ul {
 li {
 		font-size: 2em;
 	}
+
+
+a   {
+    color: #551A8B;
+    cursor: pointer;
+    font-display: "Dosis";
+    text-decoration: none;
+}    
 /*--------------------------------------------Contact-form*/
 
 .contact-heading {
