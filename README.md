@@ -122,6 +122,5 @@ https://soliv1.github.io/milestone2/piechart.html
 
 #### barcharts2 and dashboard 
 Ditto as above with scatterplot.  I need to build a better understanding of the process of creating interactive dashboards as I like them and am determined to master this situation at some point.  I feel that I am close but I am just not quite grasping it and am waiting for the "lightswitch to come on".  So I have since populated the site with some pretty pictures of graphs to illustrate until I am finally figure them out.  
-### ReadME.md Continued at: <link rel="" href="./docs/README.md" type="text/css" />
-
-
+### ReadME.md Continued at:
+README2.md
