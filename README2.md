@@ -1,6 +1,8 @@
 # milestone2
 # milestone Project
 
+###Continued from README.md
+
 ## UX Experience
 The aim in this project is to take raw data, presumably formatted as JSON, and: present it in a format thatʼs user-friendly (charts, tables, etc.), allow the user to interact with it (e.g. sort a table, narrow down to a subset of the data, etc.), and potentially derive some insight from the data.
 
