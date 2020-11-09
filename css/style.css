@@ -245,11 +245,12 @@ li {
 
 #logoNav {
     font-family: sans-serif;
+    font-style: italic;
     text-align: left;
     font-size: 1.25em;
     font-weight: bold;
-    color: black;
-}        
+    color:  #000;
+}    
 
 .center {
     text-align: center;

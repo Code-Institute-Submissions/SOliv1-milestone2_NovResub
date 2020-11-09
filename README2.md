@@ -1,7 +1,7 @@
 # milestone2
 # milestone Project
 
-###Continued from README.md
+### Continued from README.md
 
 ## UX Experience
 The aim in this project is to take raw data, presumably formatted as JSON, and: present it in a format thatʼs user-friendly (charts, tables, etc.), allow the user to interact with it (e.g. sort a table, narrow down to a subset of the data, etc.), and potentially derive some insight from the data.
@@ -17,6 +17,11 @@ Statistics and wildlife anyalictics as a guide to how we can readdress the balan
 resources and links to data and other websites.  
 Readdress the balance of population and  Country / Continent and Habitat and Species and how they correlate with each other.
 Reverse Climate Change in theory via data correlation and achieving a balanced perspective to try to understand the real world and what can be done to achieve this in practice.
+### The Interactive menu
+
+An excellent interactive menu. I  searched on github for <a src href="#home">dynamic menus</a> and chose this one which I liked very much.  I coped the complete Code from the Template, and slightly modified it for my purposes, at:
+
+https://github.com/DesignDrastic/hamburger-menu-to-slide-nav-animation
 
 #### The Cards
 create a climate change dataset.
@@ -475,9 +480,6 @@ i) Is it a number? If not itʼs definitely a dimension. ii) If it is: Does it re
 #### Presenting the Data
 D3 provides tools to generate charts out of JSON data. These charts could be tied to each other i.e. filtering on one chart affects the other charts at once (Iʼm sure youʼve seen this in the examples). The most common charts are: Tables - Self-explanatory, you can have as many measures and dimensions as you want in these. Simple bar/column charts - one dimension, one measure. Each bar/column represents an instance of the dimension field (e.g. a specific country), and its height/length is the magnitude of the measure (the countryʼs area). Scatter plots - one dimension, two measures. Each dot is an instance of the dimension field (e.g. specific country) and its horizontal and vertical position on the chart represent the magnitude of the first and second measure respectively. Donut/Pie chart - one dimension, one measure. Line graph - two measures (self-explanatory), or one dimension and one measure, where the dimension is represents values that are continuous in nature, for example time.
 
-###  Credits
-Cover page inspired by my course work in Code Institute Bckground image is a preview page from Adobe stock images (from which I have and account) My Mentor Brian Mancheria for helping me to try to understand the logistics of Java script and providing me with info to outline a project for myself -The Tutor support -The Slack Community =Thw World Data Bank for data on Population and Environement issues-Popululation Matters Data -Populataion Matters Images where indicated -DC.JS GETTING STARTED AND HOW-TO GUIDE -© 2019 GitHub, Inc. -Diff Checker: https://www.diffchecker.com/
-My tutors and my Mentor Brian who has been very patient in helping me to understand java script and graphs.
 
 ### Tests
 ##### github-the four box cover page was not evenly distributed in two rows of two boxes as it was in gitpod; 
@@ -523,5 +525,12 @@ I need to gain a better understanding of the process of creating interactive das
 Finally I understand it is not good practice to add the script to the same page as the html.  
 However, since I have broken things so many times during the building of this project, I just decided to leave things where they are for now.
 
+
+###  Credits
+Cover page inspired by my course work in Code Institute Bckground image is a preview page from Adobe stock images (from which I have and account) My Mentor Brian Mancheria for helping me to try to understand the logistics of Java script and providing me with info to outline a project for myself -The Tutor support -The Slack Community =Thw World Data Bank for data on Population and Environement issues-Popululation Matters Data -Populataion Matters Images where indicated -DC.JS GETTING STARTED AND HOW-TO GUIDE -© 2019 GitHub, Inc. -Diff Checker: https://www.diffchecker.com/
+My tutors and my Mentor Brian who has been very patient in helping me to understand java script and graphs.
+
+Credit goes to: @yogeshdevaliyayogeshdevaliya for excellent dynamic menus on my <a src href="#homepages found via github: 
+https://github.com/DesignDrastic/hamburger-menu-to-slide-nav-animation/commits?author=yogeshdevaliya</a>
 
 
