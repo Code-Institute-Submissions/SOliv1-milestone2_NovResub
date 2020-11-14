@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>D3 and Scalable Vector Graphics</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/dc.min.css" type="text/css" />
+    <!--<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/dc/2.1.8/dc.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css"> -->
+    <link rel="stylesheet" type="text/css" href="css/style1.css">
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/style2.css">
+    
+    <style>
+    
+        div {
+            clear: left;
+        }
+        
+    </style>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crossfilter/1.3.12/crossfilter.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/dc/2.1.8/dc.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/queue-async/1.0.7/queue.min.js"></script>
+</head>
+<body>
+    <h2 class="dd-title"><a id="float-left" href="index.html">Earth Focus</a></h2>
+	<div class="dd-wrapper">
+		<div class="dd-center-content">
+			<div class="dd-elements">
+				<div class="container">
+					<div class="box">
+						<div class="menu menu--top-left menu-closed" id="menu_top_left">
+							<a class="menu__btn" dd-nav-expand="menu_top_left"><i class="fa fa-bars"></i></a>
+							<ul class="menu__list">
+								<li><a href="index.html">Home</a></li>
+								<li><a href="about.html">About</a></li>
+								<li><a href="barchart.html">Bar Chart</a></li>
+                                <li><a href="barchart2.html">Bar Chart2</a></li>
+								<li><a href="piechart.html">Pie Chart</a></li>
+								<li><a href="scatterplot.html">Scatter Plot</a></li>
+							</ul>
+						</div>
+						<div class="menu menu--top-right menu-closed" id="menu_top_right">
+							<a class="menu__btn" dd-nav-expand="menu_top_right"><i class="fa fa-bars"></i></a>
+							<ul class="menu__list">
+								<li><a href="index.html">Home</a></li>
+								<li><a href="scatterplot2.html">scatter Plot-2</a></li>
+                                <li><a href="about.html">News</a></li>
+								<li><a href="#">Blog</a></li>
+								<li><a href="#">Contact</a></li>
+							</ul>
+						</div>
+						<div class="menu menu--bottom-left menu-closed" id="menu_bottom_left">
+							<a class="menu__btn" dd-nav-expand="menu_bottom_left"><i class="fa fa-bars"></i></a>
+							<ul class="menu__list">
+								<li><a target="_blank" href="facebook.com"><i class="fab fa-facebook"></i></a></li>
+								<li><a target="_blank" href="twitter.com"><i class="fab fa-twitter"></i></a></li>
+								<li><a target="_blank" href="googleplus.com"><i class="fab fa-google-plus"></i></a></li>
+								<li><a target="_blank" href="linkedin.com"><i class="fab fa-linkedin"></i></a></li>
+								<li><a target="_blank" href="youtube.com"><i class="fab fa-youtube"></i></a></li>
+							</ul>
+						</div>
+						<div class="menu menu--bottom-right menu-closed" id="menu_bottom_right">
+							<a class="menu__btn" dd-nav-expand="menu_bottom_right"><i class="fa fa-bars"></i></a>
+							<ul class="menu__list">
+								<li><a target="_blank" href="facebook.com"><i class="fab fa-facebook"></i></a></li>
+								<li><a target="_blank" href="twitter.com"><i class="fab fa-twitter"></i></a></li>
+								<li><a target="_blank" href="instagram.com"><i class="fab fa-instagram"></i></a></li>
+								<li><a target="_blank" href="pinterest.com"><i class="fab fa-pinterest"></i></a></li>
+								<li><a target="_blank" href="tumblr.com"><i class="fab fa-tumblr"></i></a></li>
+							</ul>
+						</div>
+                        <section>
+                            <div class="card" style="width: 18rem;">
+                                <div class="card-body">
+                                    <h6 class="card-subtitle mb-2 text-muted">Sir David Attenborough, Population Matters patron</h6>
+                                    <p class="card-text">"Our vision is of a future with decent living standards for all,
+                                    on a healthy, biodiverse planet."</p>
+                                    <a target="_blank" href= "https://populationmatters.org/the-facts" class="card-link">Population Matters</a>
+                                    <a target="_blank" href="scatterplot2.html" class="card-link">Scatterplot-2</a>
+                                </div>
+                            </div>
+                        </section>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	
+    <section>
+        <h1>Earth Focus</h1>
+        <h2>DC Scatter Plot</h2>
+        <div>
+            <h3>Population Per Area, colour coded by area / population</h3>
+            <div id="scatter-plot"></div>
+        </div> 
+        <div class="card">
+            <div class="card-body">
+                <div class="float-right">
+                    <lead class="inline-block"><span class="d-block p-2 bg-dark text-white">Figures regarding populations of different continents 
+                        do not reflect any assumptions about future migration, however.</span></lead>
+                    <lead class="inline-block"><span class="d-block p-2 bg-dark text-white">Climate change, poverty and population pressures themselves will lead to a highly mobile global population, 
+                        with Africa likely to be the largest source of emigrants.
+                    </span></lead>
+                </div><br>
+            </div>
+    </section>
+        <script>
+        queue()
+            .defer(d3.json, "data/transactions.json")
+            .await(makeGraphs);
+
+        function makeGraphs(error, transactionsData) {
+            var ndx = crossfilter(transactionsData);
+            var parseDate = d3.time.format("%d/%m/%Y").parse;
+            
+            transactionsData.forEach(function(d){
+                d.date = parseDate(d.date);
+            });
+
+            var dateDim = ndx.dimension(function(d){
+                return d.date;
+            });
+
+
+            var tradeColors = d3.scale.ordinal()
+                .domain(["Alice", "Tom", "Bob"])
+                .range(["red", "green", "blue"]);
+
+
+            var minDate = dateDim.bottom(1)[0].date;
+
+            var maxDate = dateDim.top(1)[0].date;
+
+            var spendDim = ndx.dimension(function(d){
+                return [d.date, d.spend, d];
+            });
+
+            var spendGroup = spendDim.group();
+
+            var spend_chart = dc.scatterPlot("#scatter-plot");
+
+            spend_chart
+                .width(768)
+                .height(480)
+                .x(d3.time.scale().domain([minDate, maxDate]))
+                .brushOn(false)
+                .symbolSize(8)
+                .clipPadding(10)
+                .yAxisLabel("Amount Spent")
+                .title(function (d) {
+                    return d.key[2].name + " spent " + d.key[2].spend + " in store " + d.key[2].store;
+
+                })
+
+                .colorAccessor(function (d) {
+                    return d.key[2].name;
+
+                })
+                
+                .colors(tradeColors)
+                .dimension(spendDim)
+                .group(spendGroup);
+
+            dc.renderAll();
+        }
+        </script>
+        <script
+			  src="https://code.jquery.com/jquery-3.3.1.min.js"
+			  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+			  crossorigin="anonymous"></script>
+	    <script>
+		$('[dd-nav-expand]').on('click', function(){
+			$(this).hide();
+			var menu_id = $(this).attr('dd-nav-expand');
+			$('#'+menu_id).removeClass('menu-closed');
+			$('#'+menu_id).addClass('collapse');
+		});
+
+		$('html').on('click', function(){
+			$('[dd-nav-expand]').each(function(){
+				$(this).show();
+				var menu_id = $(this).attr('dd-nav-expand');
+				$('#'+menu_id).addClass('menu-closed');
+				$('#'+menu_id).removeClass('collapse');
+			});
+		});
+
+		$('.menu').on('click', function(event){
+			event.stopPropagation();
+		});
+
+	</script>
+</body>
+</html>

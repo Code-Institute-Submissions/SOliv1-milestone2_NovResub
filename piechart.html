@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
+    <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -16,66 +16,68 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/crossfilter/1.3.12/crossfilter.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/dc/2.1.8/dc.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/queue-async/1.0.7/queue.min.js"></script>
-   </head>
-   <body>
-      <div>
-         <div class="menu" style="width:200px;">
-            <select class="dc-select-menu">
-               <option value="">Select all</option>
-               <option class="dc-select-option" value="Country">Country</option>
-               <option class="dc-select-option" value="Population">Population</option>
-               <option class="dc-select-option" value="Population">Continent</option>
-               <option class="dc-select-option" value="Area">Area</option>
-            </select>
-         </div>
-         <div id="container-fluid">
-            <nav>
-               <ul>
-                  <li id="logoNav">Earth Focus</li>
-                  <li><a href="index.html">Home</a></li>
-                  <li><a href="about.html">About</a></li>
-                  <li><a href="barchart.html">BarChart</a></li>
-                  <!-- <li><a href="barchart2.html">BarChart2</a></li> -->
-                  <li><a href="piechart.html">PieChart</a></li>
-                  <li><a href="scatterplot.html">ScatterPlot</a></li>
-               </ul>
-            </nav>
-         </div>
-         <h3>Total Population Per Country</h3>
-         <div id="per-Country-chart"></div>
-      </div>
-      <div>
-         <h3>Total Population Per Continent</h3>
-         <div id="per-Continent-chart"></div>
-      </div>
-      <div>
-         <h3>Total Area Per Continent</h3>
-         <div id="per-Area-chart"></div>
-      </div>
-      <script>
+    </head>
+    <body>
+        <div>
+            <div class="menu" style="width:200px;">
+                <select class="dc-select-menu">
+                <option value="">Select all</option>
+                <option class="dc-select-option" value="Country">Country</option>
+                <option class="dc-select-option" value="Population">Population</option>
+                <option class="dc-select-option" value="Population">Continent</option>
+                <option class="dc-select-option" value="Area">Area</option>
+                </select>
+            </div>
+            <div id="container-fluid">
+                <nav>
+                <ul>
+                    <li id="logoNav">Earth Focus</li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="barchart.html">BarChart</a></li>
+                    <!-- <li><a href="barchart2.html">BarChart2</a></li> -->
+                    <li><a href="piechart2.html">PieChart</a></li>
+                    <li><a href="scatterplot.html">ScatterPlot</a></li>
+                    <li><a href="scatterplot2.html">ScatterPlot-2</a></li>
+
+                    </ul>
+                </nav>
+            </div>
+                <h3>Total Population Per Country</h3>
+            <div id="per-Country-chart"></div>
+            </div>
+            <div>
+            <h3>Total Population Per Continent</h3>
+            <div id="per-Continent-chart"></div>
+            </div>
+            <div>
+                <h3>Total Area Per Continent</h3>
+                <div id="per-Area-chart"></div>
+            </div>
+        <script>
          queue()
              .defer(d3.json, "data/populationcountry.json")
              .await(makeGraphs);
-         function makeGraphs(error, populationcountryData) {
-             var ndx = crossfilter(populationcountryData);
-             var country_dim = ndx.dimension(dc.pluck('Country'));
-             var total_population_per_country = country_dim.group().reduceSum(dc.pluck('Population'));
+                function makeGraphs(error, populationcountryData) {
+                var ndx = crossfilter(populationcountryData);
+                var country_dim = ndx.dimension(dc.pluck('Country'));
+                var total_population_per_country = country_dim.group().reduceSum(dc.pluck('Population'));
              dc.pieChart('#per-Country-chart')
                  .height(330)
                  .radius(90)
                  .transitionDuration(1500)
                  .dimension(country_dim)
                  .group(total_population_per_country);
-             var continent_dim = ndx.dimension(dc.pluck('Continent'));
-             var total_population_per_continent = continent_dim.group().reduceSum(dc.pluck('Population'));
+                var continent_dim = ndx.dimension(dc.pluck('Continent'));
+                var total_population_per_continent = continent_dim.group().reduceSum(dc.pluck('Population'));
              dc.pieChart('#per-Continent-chart')
                  .height(330)
                  .radius(90)
                  .transitionDuration(1500)
                  .dimension(continent_dim)
                  .group(total_population_per_continent);
-             var area_dim = ndx.dimension(dc.pluck('Area'));
-             var total_area_per_continent = continent_dim.group().reduceSum(dc.pluck('Area'));
+                var area_dim = ndx.dimension(dc.pluck('Area'));
+                var total_area_per_continent = continent_dim.group().reduceSum(dc.pluck('Area'));
              dc.pieChart('#per-Area-chart')
                  .height(330)
                  .radius(90)
@@ -84,11 +86,11 @@
                  .group(total_area_per_continent);
              dc.renderAll();
          }
-      </script>
-      <div id="my_footer">
-         <div class="col-sm-4">
-            <p id="copyright">Copyright Infomation</p>
-         </div>
-      </div>
-   </body>
+        </script>
+        <div id="my_footer">
+            <div class="col-sm-4">
+                <p id="copyright">Copyright Infomation</p>
+            </div>
+        </div>
+    </body>
 </html>
