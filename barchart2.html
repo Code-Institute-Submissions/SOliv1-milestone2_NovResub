@@ -19,25 +19,29 @@
     <script type="text/javascript" src="./js/dc.min.js"></script>
     <script type="text/javascript" src="./js/graph.js"></script>
     <script type="text/javascript" src="./js/queue.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/dc/2.1.8/dc.min.css"/>
+  <!-- <li><a href="barchart2.html">BarChart2</a></li> -->
+  <style>
+
+        div {
+
+            clear: left;
+
+        }
+
+    </style>
+        <!-- <li><a href="barchart2.html">BarChart2</a></li> -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crossfilter/1.3.12/crossfilter.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/dc/2.1.8/dc.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/queue-async/1.0.7/queue.min.js"></script>
 </head>
 <body>
-    <div>
-        <div class="menu" style="width:200px;">
-            <select class="dc-select-menu">
-                <option value="">Select all</option>
-                <option class="dc-select-option" value="Country">Country</option>
-                <option class="dc-select-option" value="Population">Population</option>
-                <option class="dc-select-option" value="Population">Continent</option>
-                <option class="dc-select-option" value="Area">Area</option>
-            </select>
-        </div>
-    </div>
-
     <div id="container">
         <nav>
             <ul>
                 <li id="logoNav">Earth Focus</li>
-                <li><a href="index.html#part1graphs_btn">Home</a></li>
+                <li><a href="index.html">Home</a></li>
 				<li><a href="barchart.html">BarChart</a></li>
                 <li><a href="barchart2.html">BarCharts2</a></li>
                 <li><a href="piechart.html">PieChart</a></li>
@@ -46,101 +50,107 @@
         </nav>
     </div>
 
+<body>
+    <h1>Data Visualisation</h1>
+    <h2>DC Stacked Bar Chart</h2>
+    <div>
 
-    <section class="section">
-        <div class="container">
-            <div class="row">
-                <div>
-                    <div class="col-xs-12 col-sm-12">
-                    <h1 class="section-heading">Earth Focus</h1>
-                    <div id="discipline-selector">
-                    </div>
-                </div>
-            </div>
+        <h3>Earth Focus Stack</h3>
 
-            <div class="row">
-                <div class="col-xs-12 col-sm-12">
-                <p class="section-paragraph">Population verses Area size:</p>
-                </div>
+        <div id="stacked-chart"></div>
 
-            <div class="col-xs-12 col-sm-6 col-lg-6">
-                <i class="fas fa-chart-bar"  aria-hidden="true"></i><span class="number-box" id="percent-of-Population"></span>
-                <i class="fas fa-chart-area" aria-hidden="true"></i> <span class="number-box" id="percent-of-Area"></span>
-            </div>
-        </div>
-    </section>
-    <section class="section">
-        <div class="container">
-          <div class="row">
-            <div class="col-xs-12 col-sm-4 text-center">
-                <p class="section-paragraph">Population verses area size.</p>
-            </div>
-            <div class="col-xs-12 col-sm-4 text-center">
-                <p class="section-paragraph"> Average area.</p>
-            </div>
-            <div class="col-xs-12 col-sm-4 text-center">
-                <p class="section-paragraph">Distribution of population across an area.</p>
-            </div>
-            <div class="row">
-              <div class="col-xs-12 col-sm-4 text-center" id="Population-balance" class="custom-chart"></div>
-              <div class="col-xs-12 col-sm-4 text-center" id="average-Area" class="custom-chart"></div>
-              <div class="col-xs-12 col-sm-4 text-center" id="rank-distribution" class="custom-chart"></div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12 col-sm-12 text-center">
-                <p class="section-paragraph">There appears to be little or no correlation between population and size of an area.</p>
-            </div>
-            <div class="col-xs-12 col-sm-12 text-center" id="population-Area">
-            </div>
-        </div>
-    </section>
-
-    <section class="section">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12 col-sm-12 text-center">
-                <p class="section-paragraph">There is a very loose correlation between population and area.</p>
-            </div>
-            <div class="col-xs-12 col-sm-12 text-center" id="Area-Population"></div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="container-fluid">
-        <div id="footer-details" class="row">
-            <div class="col-sm-4">
-                <h5 class="uppercase general-sub">About</h5>
-                    <p class="inline-block">
-                         Figures regarding populations of different continents do not reflect any assumptions about future migration, however.
-                         Climate change, poverty and population pressures themselves will lead to a highly mobile global population, with Africa likely to be the largest source of emigrants.
-                    </p>
-            <div class="col-sm-4">
-                <h5 class="uppercase general-sub">Earth Focus Social</h5>
-                    <ul class="list-inline social-links">
-                        <li><a target="_blank" href="#"><i class="fab fa-facebook">facebook</i></a></li>
-                        <li><a target="_blank" href="#"><i class="fab fa-twitter">twitter</i></a></li>
-                        <li><a target="_blank" href="#"><i class="fab fa-github">Github</i></a></li>
-                        <li><a target="_blank" href="#"><i class="fab fa-pinterest">pinterest</i></a></li>
-                        <li><a target="_blank" href="#"><i class="fab fa-instagram">instagram</i></a></li>
-                        <li><a target="_blank" href="#"><i class="fab fa-youtube">youtube</i></a></li>
-                    </ul>
-                </div>
-            </div>
-    </footer>
-        <div id="my_footer">
-            <p id="copyright">Copyright Infomation</p>
-        </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
-    <script src="script.js"></script>
-    <script
-        type="text/javascript"
-        src="https://use.fontawesome.com/releases/v5.11.2/js/conflict-detection.js">
+
+
+
+    <script>
+
+    queue()
+
+        .defer(d3.json, "data/transactions.json")
+
+        .await(makeGraphs);
+
+
+
+    function makeGraphs(error, transactionsData) {
+
+        var ndx = crossfilter(transactionsData);
+
+
+
+        var name_dim = ndx.dimension(dc.pluck('name'));
+
+
+
+        var spendByNameStoreA = name_dim.group().reduceSum(function (d) {
+
+            if (d.store === 'A') {
+
+                return +d.spend;
+
+            } else {
+
+                return 0;
+
+            }
+
+        });
+
+
+
+        var spendByNameStoreB = name_dim.group().reduceSum(function (d) {
+
+            if (d.store === 'B') {
+
+                return +d.spend;
+
+            } else {
+
+                return 0;
+
+            }
+
+        });
+
+
+
+        var stackedChart = dc.barChart("#stacked-chart");
+
+        stackedChart
+
+            .width(500)
+
+            .height(500)
+
+            .dimension(name_dim)
+
+            .group(spendByNameStoreA, "Store A")
+
+            .stack(spendByNameStoreB, "Store B")
+
+            .x(d3.scale.ordinal())
+
+            .xUnits(dc.units.ordinal)
+
+            .legend(dc.legend().x(420).y(0).itemHeight(15).gap(5));
+
+
+
+        stackedChart.margins().right = 100;
+
+
+
+        dc.renderAll();
+
+    }
+
     </script>
+</body>
+</html>
+
+
+
+
 </body>
 </html>

@@ -43,8 +43,6 @@ body {
 
 /**
  * Add the correct display in IE 9-.
- */
-
 article,
 aside,
 footer,
@@ -52,6 +50,26 @@ header,
 nav,
 section {
   display: block;
+}
+ */
+
+section, .h1 
+figcaption,
+main {
+  font-size: 2em;
+  margin: 0.67em 0;
+  color:#000;
+  display: block;
+  font-family:auto;
+ 
+}
+
+section, .h1 figcaption, main {
+    margin: 0.67em 0;
+    color: #fff;
+    display: block;
+    font-family: 'Source Sans Pro', sans-serif;
+    /* font-family: auto; */
 }
 
 /**
