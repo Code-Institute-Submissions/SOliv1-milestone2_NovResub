@@ -107,18 +107,16 @@ figure {
 /**
  * 1. Add the correct box sizing in Firefox.
  * 2. Show the overflow in Edge and IE.
- */
- 
+ /**
 hr {
-  box-sizing: content-box; /* 1 */
+  box-sizing: content-box; 
   overflow: visible;
   width: 75px;
   height: 5px;
   border: 0;
   color: #f57f17 important!;
-}
-
-/**
+}*/
+ 
  * 1. Correct the inheritance and scaling of font size in all browsers.
  * 2. Correct the odd `em` font sizing in all browsers.
  */

@@ -25,8 +25,9 @@ h2 {
 }
 
 p {
-	font-size: .7em;
+	font-size: 3em;
     font-family: 'Dosis';
+    color:#fff;
 }
 
 .inline-block {
@@ -64,32 +65,42 @@ div {
     flex: 0;
     color: rgb(58, 39, 39);
     font-family: sans-serif;
-	font-size:.7em;
+	font-size:.3em;
 }
+
+
+/* About-page */
+
 
 p.card_par1 {
     flex: 1 0 auto;
-    color: #000;
+    color: #fff;
 }
 
-p.card_par2 {
+p.card_par2 .highlight_text {
     flex: 1 0 auto;
-    color:#000;
+    background:#df4929;
+    color:#fff;
 }
 
 p.card_par3 {
     flex: 1 0 auto;
-    color: #000;
+    color: #fff;
 }
 
 p.card_para {
     flex: 1 0 auto;
-    color: #000;
-   
+    color: #fff;
 }
 
+
+p {
+	font-size: .9rem;
+}
+
+
 #container {
-	display: flex;		/* makes container a flexbox*/
+	display: flex;		/* makes container a flexbox */
 	flex-flow: row wrap; 	/* layout the boxes in rows and wrap them*/
 	box-sizing:border-box;
 	margin-right:auto;
@@ -304,7 +315,6 @@ button[type="submit"] {
     background-color: #e84610;
     color: #fafafa;
 }
-
 
 
 /*--------------------------------------------centre-formmedia queries*/

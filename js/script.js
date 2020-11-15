@@ -27,14 +27,54 @@
         $('#button_effects4').fadeTo(1000, 1);
     });
 
-//waits until page is loaded first
+    //waits until page is loaded first
 
     $(document).ready(function(){
     //applies colour red to paragraphs when clicked on
     $("p").click(function(){
-        $("p").addClass("highlight_text");
+        $("p").addClass("card_par2 highlight_text"); 
     });
+
+
+    // Toggle the visibility of the paragraph when a button is clicked 
+
+	$("button").click(function(){
+		$(this).prev().slideToggle('slow');
+
+	});
+
+	// Open the paragraph once the image is clicked
+
+	$("img").click(function() {
+		$(this).next().children("p").slideDown();
+
+	});
+
+
+	$(".card").click(function() {
+		$(this).toggleClass("highlight");	 
+
+	});
+	
+	// All cards that are not currently selected will be hidden when `select_btn` is clicked
+
+	$("#select_btn").click(function() {
+
+		$(".card:not(.highlight)").hide();	 
+
+	});
+
+// Select all cards
+
+	$("#all_btn").click(function(){
+
+		$(".card").show();	
+		
+	});
+
 });
+
+
 
     
     
