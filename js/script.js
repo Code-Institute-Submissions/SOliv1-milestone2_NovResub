@@ -26,6 +26,9 @@
     $("#button_effects4").mouseleave(function(){
         $('#button_effects4').fadeTo(1000, 1);
     });
+    $("#button_effects4").mouseleave(function(){
+        $('#button_effects5').fadeTo(1000, 1);
+    });
 
     //waits until page is loaded first
 

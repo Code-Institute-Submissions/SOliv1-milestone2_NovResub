@@ -17,6 +17,18 @@ body, section {
     background-repeat: no-repeat;
     height: 100%;
 	color: #fff;
+	background-color: #0096;
+ }
+
+
+/* scatterplot */
+
+body, section, scatterplot {
+	
+	background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+	color: #fff;
 	background-color: #000;
  }
 
