@@ -77,12 +77,8 @@ Bootstrap4 for layouts and interactive menus and media.
 ## BUGS
 THE FOLLOWING CODES ARE ALL BUGS WHICH I HAVE HAD A GREAT DEAL OF TROUBLE RENDERING AND DEPLOYING INCLUDING MY HOME PAGE.
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
 
-<body>
-    <div>
+>
         <div class="menu" style="width:200px;">
         <select class="dc-select-menu">
             <option value="">Select all</option>
@@ -162,7 +158,7 @@ THE FOLLOWING CODES ARE ALL BUGS WHICH I HAVE HAD A GREAT DEAL OF TROUBLE RENDER
 @@ -137,4 +116,5 @@ <h3>Total Area Per Continent</h3>
         }
     </script>
-
+>
 My tutors and my Mentor Brian who has been very patient in helping me to underst
 ##### I did not use jasmine as I did not fully understand it and also probably did not need too either on this project.  
 
@@ -173,6 +169,9 @@ My tutors and my Mentor Brian who has been very patient in helping me to underst
 #### Home Page - major bug issue 
 
 #### unresolved
+
+The contact page should be done in flask or as a fullstack but I do not have time to do this and so contact does not work.
+
 Below is the link to a home page I created but cannot deploy as somehow the links have caused issues with both my bar chart and my pie chart not rendering on the webpage.
 
 https://8000-d2264e7f-c97d-48d2-b0ad-7b63896e9c67.ws-eu01.gitpod.io/piechart.html
@@ -465,7 +464,7 @@ github to deploy my website; AWS Cloud9 followed by gitpod as soon as I heard th
 >
 >
 ##### Media by bootstrap4:- 
-<div class="media mt-3">
+                        <div class="media mt-3">
                             <a class="pr-3" href="#">
                                 <img src="..." alt="Generic placeholder image">
                                 <div class="embed-responsive embed-responsive-jdXy4WHRegY">
@@ -504,6 +503,8 @@ I really hope to be able to iron these out in time hence the project being unfin
 I could not make multiple colours appear in my barchart.html.
 .colorAccessor(function (d) { if (d.value > 12) { return "Country"; } if (d.value > 9) { return "Continent"; } if (d.value > 6) { return "test3"; } if (d.value > 3) { return "test4"; } })
 
+**I had a problem with my contact form so it does not work - did not have time to fix this.**
+
 #### scatterplot.html
 Could not make the graph appear with the data for measurements of area and population and dimension - country. 
 I tried different information from different datasets (see docs folder for ideas and wireframes and datasets), 
@@ -527,10 +528,12 @@ Cannot figure out at this stage how and where the following select menu should g
             .group(group);
 
 I need to gain a better understanding of the process of creating interactive dashboards as I like them and am determined to master this situation at some point. I feel that I am close but I am just not quite grasping it and am waiting for the "lightswitch to come on". So I have since populated the site with some pretty pictures of graphs to illustrate until I am finally figure them out.
+I need to be able to turn this project into a flask or a fullstack project as it will be a much better website if I had the time to do this.
 
-Finally I understand it is not good practice to add the script to the same page as the html.  
-However, since I have broken things so many times during the building of this project, I just decided to leave things where they are for now.
+Finally I understand it is not good practice to add the script to the same page as the html. 
 
+**However, since I have broken things so many times during the building of this project, I just decided to leave things where they are for now.""
+ 
 
 ###  Credits
 
