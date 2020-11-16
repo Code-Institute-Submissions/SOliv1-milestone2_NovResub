@@ -1,5 +1,5 @@
 # milestone2
-graphs project
+## graphs project
 
 ## DEMO SITE
 view live site here: https://soliv1.github.io/milestone2
